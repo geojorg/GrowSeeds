@@ -28,7 +28,29 @@
         <controls:StrainsSearchHandler DisplayMemberName="Name"
                                        Placeholder="Find your Strain"
                                        ShowsResults="true"
-                                       SearchBoxVisibility="Collapsible"/>
+                                       SearchBoxVisibility="Collapsible">
+        <controls:StrainsSearchHandler.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.15*"/>
+                            <ColumnDefinition Width ="0.12"/>
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Column="0"
+                            Text="{Binding Name}"
+                            VerticalOptions="Center"
+                            HorizontalOptions="CenterAndExpand"
+                            FontAttributes="Bold">
+                        </Label>
+                        <Image
+                            Grid.Column="1"
+                            Source="Add">
+                        </Image>
+                    </Grid>
+                </DataTemplate>
+         </controls:StrainsSearchHandler.ItemTemplate>
+        </controls:StrainsSearchHandler>
     </Shell.SearchHandler>
 </ContentPage>
 
