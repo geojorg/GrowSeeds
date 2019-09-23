@@ -29,7 +29,6 @@
             this.Picture = "UserGeneric.png";
             _googleClientManager = CrossGoogleClient.Current;
             IsLoggedIn = false;
-            
     }
 
         #endregion
