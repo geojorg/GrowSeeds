@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
+             xmlns:local="clr-namespace:GrowSeeds"
+             x:DataType="viewModels:AgeVerificationViewModel"
+             x:Class="GrowSeeds.Views.AgeVerificationPage"
+             Shell.NavBarIsVisible="False"
+             Visual="Material">
+
+    <ContentPage.Content>
+        <ScrollView x:DataType="viewModels:AgeVerificationViewModel">
+            <StackLayout
+                Padding="20,20,20,20">
+
+                <Label Text="GrowSeed"
+                    FontFamily="{StaticResource UbuntuBold}"
+                    FontSize="Title"
+                    TextColor="#333333"
+                    Margin="90"
+                    HorizontalOptions="CenterAndExpand"/>
+                <Label Text="¿Tienes más de 18 Años?"
+                       FontFamily="{StaticResource UbuntuBold}"
+                       FontSize="Body"
+                       Margin="20"
+                       HorizontalOptions="CenterAndExpand" />
+                <Label Text="Para poder utilizar GroWeed es importante que cumplas con los requisitos mínimos legales de tu región, de forma que puedas ver información relacionada con el cannabis."
+                       HorizontalOptions="CenterAndExpand"/>
+                <Label LineBreakMode="CharacterWrap">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Confirmo que tengo 18 años o más y que estoy de acuerdo con los "/>
+                            <local:HyperlinkSpan Text="Terminos de Uso "
+                                                 Url="http://www.geojorgx.com/privacy-policy/" />
+                            <Span Text="y la "/>
+                            <local:HyperlinkSpan Text="Política de Privacidad."
+                                                 Url="http://www.geojorgx.com/privacy-policy/" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Grid 
+                    HeightRequest="90" 
+                    HorizontalOptions="Center" 
+                    Margin="60" 
+                    WidthRequest="150" >
+
+                    <Button
+                    BackgroundColor="#558b2f"    
+                    Command="{Binding AcceptCommand}"
+                    CornerRadius="15"
+                    Grid.Row="0"
+                    TextColor="White"
+                    Text="ACCEPT">
+                    </Button>
+
+                    <Button
+                    BackgroundColor="#558b2f"    
+                    Command="{Binding CancelCommand}"
+                    CornerRadius="15"
+                    Grid.Row="1"
+                    TextColor="White"
+                    Text="REJECT">
+                    </Button>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

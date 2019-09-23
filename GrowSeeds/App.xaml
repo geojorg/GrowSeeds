@@ -6,6 +6,28 @@
              mc:Ignorable="d"
              x:Class="GrowSeeds.App">
     <Application.Resources>
+        
+        <Style TargetType="Label">
+            <Setter Property="FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android">Ubuntu.ttf#Ubuntu</On>
+                    <On Platform="iOS">Ubuntu</On>
+                </OnPlatform>
+            </Setter>
+        </Style>
 
+        <Style TargetType="Button">
+            <Setter Property="FontFamily">
+                <OnPlatform x:TypeArguments="x:String">
+                    <On Platform="Android">Ubuntu.ttf#Ubuntu</On>
+                    <On Platform="iOS">Ubuntu</On>
+                </OnPlatform>
+            </Setter>    
+        </Style>
+        
+        <OnPlatform x:TypeArguments="x:String" x:Key="UbuntuBold">
+            <On Platform="Android">UbuntuBold.ttf#Ubuntu-B</On>
+            <On Platform="iOS">Ubuntu-B</On>
+        </OnPlatform>
     </Application.Resources>
 </Application>
