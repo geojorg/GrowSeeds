@@ -54,7 +54,7 @@
         <Tab Title="Search" Icon="ic_search">
             <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" />
         </Tab>
-        <Tab Title="Information" Icon="@drawable/ic_info">
+        <Tab Title="Information" Icon="ic_info">
             <ShellContent ContentTemplate="{DataTemplate local:InformationPage}" />
         </Tab>
         <Tab Title="Log" Icon="drawable/ic_log.png">

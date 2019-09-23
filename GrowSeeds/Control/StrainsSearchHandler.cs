@@ -16,7 +16,7 @@
             }
             else
             {
-                ItemsSource = SearchViewModel.NameofStrains.Where(n => n.Name.StartsWith(newValue));
+                ItemsSource = SearchViewModel.NameofStrains.Where(n => n.Name.ToLower().StartsWith(newValue));
             }
         }
         protected override async void OnItemSelected(object item)

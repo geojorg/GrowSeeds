@@ -11,9 +11,15 @@
              Title="Search">
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Search for your specific cannabis strain"
-                VerticalOptions="CenterAndExpand" 
+        <StackLayout Padding="20,20,20,20">
+            <Image Source="Search.png"
+                   WidthRequest="100"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand">
+            </Image>
+            <Label Text="Search for your specific cannabis strain to start using GrowSeeds"
+                VerticalOptions="StartAndExpand" 
+                FontSize="Medium"
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
