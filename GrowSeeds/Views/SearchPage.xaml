@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              xmlns:controls="clr-namespace:GrowSeeds.Control"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
+             xmlns:views="clr-namespace:GrowSeeds.Views"
              x:DataType="viewModels:SearchViewModel"
              x:Class="GrowSeeds.Views.SearchPage"
              Title="Search">
@@ -21,6 +22,8 @@
                 VerticalOptions="StartAndExpand" 
                 FontSize="Medium"
                 HorizontalOptions="CenterAndExpand" />
+            <Label
+                Text="{Binding Name2}"/>
         </StackLayout>
     </ContentPage.Content>
     
@@ -31,23 +34,7 @@
                                        SearchBoxVisibility="Collapsible">
         <controls:StrainsSearchHandler.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.15*"/>
-                            <ColumnDefinition Width ="0.12"/>
-                        </Grid.ColumnDefinitions>
-                        <Label
-                            Grid.Column="0"
-                            Text="{Binding Name}"
-                            VerticalOptions="Center"
-                            HorizontalOptions="CenterAndExpand"
-                            FontAttributes="Bold">
-                        </Label>
-                        <Image
-                            Grid.Column="1"
-                            Source="Add">
-                        </Image>
-                    </Grid>
+                    <views:StrainSearchItemView/>
                 </DataTemplate>
          </controls:StrainsSearchHandler.ItemTemplate>
         </controls:StrainsSearchHandler>

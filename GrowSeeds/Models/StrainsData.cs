@@ -1,7 +1,6 @@
 ﻿namespace GrowSeeds.Models
 {
     using System;
-    using System.Collections;
     using System.Globalization;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
