@@ -4,25 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="GrowSeeds.Views.StrainSearchItemView">
+             x:Class="GrowSeeds.Views.StrainSearchItemView"
+             Visual="Material">
     
     <ContentView.Content>
-        <Grid Padding="3">
+        <Grid Padding="6">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.15*"/>
-                <ColumnDefinition Width="0.08*"/>
+                <ColumnDefinition Width="0.18*"/>
+                <ColumnDefinition Width="0.015*"/>
             </Grid.ColumnDefinitions>
             <Label
-                            Grid.Column="0"
-                            Text="{Binding Name}"
-                            VerticalOptions="Center"
-                            HorizontalOptions="CenterAndExpand"
-                            FontAttributes="Bold">
-            </Label>
+                Grid.Column="0"
+                HorizontalTextAlignment="Start"
+                Text="{Binding Name}"
+                FontSize="Medium"
+                VerticalTextAlignment="Center"/>
             <Image
-                            Grid.Column="1"
-                            Source="Add">
-            </Image>
+                Grid.Column="1"
+                Source="Add"/>
         </Grid>
     </ContentView.Content>
 </ContentView>

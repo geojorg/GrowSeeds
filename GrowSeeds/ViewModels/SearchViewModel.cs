@@ -3,7 +3,6 @@
     using Models;
     using Services;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Linq;
 
     public class SearchViewModel : BaseViewModel
@@ -11,7 +10,7 @@
         #region Attributes
         public const string strainSourceData = "http://www.geojorgx.com/api/v2/straindata.json";
         public const string strainSourceAPIKey = "";
-        private string name2;
+        private bool isLoading;
         #endregion
 
         #region Services
@@ -24,25 +23,20 @@
             get;
             set;
         }
-        public string Name2
+        public bool IsLoading
         {
-            get { return this.name2; }
-            set { SetProperty(ref this.name2, value); }
-        }
-        public string Name
-        {
-            get;
-            set;
+            get { return this.isLoading; }
+            set { SetProperty(ref this.isLoading, value); }
         }
         #endregion
 
         #region Constructor 
         public SearchViewModel()
         {
+            this.IsLoading = true;
             _restService = new RestService();
             RestService.ConectivityStatus();
             LoadPageEvent();
-
         }
         #endregion
 
@@ -51,7 +45,7 @@
         {   
             var response = await _restService.GetStrainsDataAsync(strainSourceData);
             NameofStrains = new List<WeedStrain>(response.WeedStrains.ToList());
-            this.Name2 = "TESTING";
+            this.IsLoading = false;
         }
         #endregion
     }

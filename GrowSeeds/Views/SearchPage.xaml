@@ -9,6 +9,7 @@
              xmlns:views="clr-namespace:GrowSeeds.Views"
              x:DataType="viewModels:SearchViewModel"
              x:Class="GrowSeeds.Views.SearchPage"
+             Visual="Material"
              Title="Search">
     
     <ContentPage.Content>
@@ -18,12 +19,17 @@
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand">
             </Image>
-            <Label Text="Search for your specific cannabis strain to start using GrowSeeds"
-                VerticalOptions="StartAndExpand" 
+            <ActivityIndicator
+                Color="#000000"
+                IsRunning="{Binding IsLoading}"
+                Margin="5">
+            </ActivityIndicator>
+            <Label              
                 FontSize="Medium"
-                HorizontalOptions="CenterAndExpand" />
-            <Label
-                Text="{Binding Name2}"/>
+                HorizontalOptions="CenterAndExpand"
+                Margin="20"
+                Text="Search for your specific cannabis strain to start using GrowSeeds"
+                VerticalOptions="StartAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
     

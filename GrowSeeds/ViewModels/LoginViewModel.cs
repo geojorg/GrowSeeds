@@ -55,7 +55,7 @@
             {
                 this.EmailEmpty = "Transparent";
                 this.PasswordEmpty = "Transparent";
-                Shell.Current.GoToAsync("//Seeds");
+                Shell.Current.GoToAsync("//AppPage");
             }
         }
         public ICommand RegisterCommand

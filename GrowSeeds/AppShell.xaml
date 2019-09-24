@@ -50,15 +50,18 @@
         </ShellSection>
     </ShellItem>
 
-    <TabBar Route="Seeds">
+    <TabBar Route="AppPage">
         <Tab Title="Search" Icon="ic_search">
-            <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" 
+                          Route="SearchTab"/>
         </Tab>
         <Tab Title="Information" Icon="ic_info">
-            <ShellContent ContentTemplate="{DataTemplate local:InformationPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:InformationPage}" 
+                          Route="InfoTab"/>
         </Tab>
         <Tab Title="Log" Icon="drawable/ic_log.png">
-            <ShellContent ContentTemplate="{DataTemplate local:LogPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:LogPage}" 
+                          Route="LogTab"/>
         </Tab>
     </TabBar>
 
