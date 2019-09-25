@@ -22,26 +22,89 @@
             x:DataType="viewModels:StrainDetailViewModel"
             Padding="10">
             <Label
-                Text="{Binding Name}">
-            </Label>
-            <Label
-                Text="{Binding Rating}">
-            </Label>
-            <Label
-                Text="{Binding Type}">
-            </Label>
-            <Label
-                Text="{Binding Effects}">
-            </Label>
-            <Label
-                Text="{Binding Flavor}">
-            </Label>
-            <Label
-                Text="{Binding Thc}">
-            </Label>
-            <Label
-                Text="{Binding Cbd}">
-            </Label>
+                HorizontalOptions="CenterAndExpand"
+                Text="{Binding Name}"
+                FontFamily="{StaticResource UbuntuBold}"
+                FontSize="34"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="90"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Image
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Source="ic_star"/>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Rating"
+                    HorizontalOptions="Center"
+                    FontFamily="{StaticResource UbuntuBold}"/>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Text="{Binding Rating}"
+                    FontFamily="{StaticResource UbuntuBold}"
+                    FontSize="30"
+                    HorizontalOptions="Center"/>
+                <Image
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Source="ic_thc"/>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="Contains"
+                    HorizontalOptions="Center"
+                    FontFamily="{StaticResource UbuntuBold}"/>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Text="{Binding Thc}"
+                    FontFamily="{StaticResource UbuntuBold}"
+                    FontSize="30"
+                    HorizontalOptions="Center"/>
+                <Image
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    Source="ic_cbd"/>
+                <Label
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    Text="Contains"
+                    HorizontalOptions="Center"
+                    FontFamily="{StaticResource UbuntuBold}"/>
+                <Label
+                    Grid.Column="2"
+                    Grid.Row="2"
+                    Text="{Binding Cbd}"
+                    FontFamily="{StaticResource UbuntuBold}"
+                    FontSize="30"
+                    HorizontalOptions="Center"/>
+            </Grid>
+            <StackLayout
+                Padding="10"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding Type}"
+                    FontSize="Large"/>
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding Effects}"
+                    FontSize="Medium"/>
+                <Label
+                    HorizontalOptions="CenterAndExpand"
+                    Text="{Binding Flavor}"
+                    FontSize="Medium"/>
+            </StackLayout>
+            <Button
+                Text="Add">
+                
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
