@@ -9,6 +9,11 @@
 
     public class StrainsSearchHandler : SearchHandler 
     {
+        #region Properties
+        public Type SelectedItemNavigationTarget { get; set; }
+        #endregion
+
+        #region Commands
         protected override void OnQueryChanged(string oldValue, string newValue)
         {
             base.OnQueryChanged(oldValue, newValue);
@@ -27,6 +32,7 @@
            await Task.Delay(1000);
            await (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"//Detail?id={((WeedStrain)item).Id}");
         }
+        #endregion
     }
 }
 

@@ -7,9 +7,15 @@
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
              x:DataType="viewModels:StrainDetailViewModel"
              x:Class="GrowSeeds.Views.StrainDetailPage"
- 
              Visual="Material"
              Title="Strain Details">
+    
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior
+            Command="{Binding BackCommand}"
+            IconOverride="ic_arrow_back">
+        </BackButtonBehavior>
+    </Shell.BackButtonBehavior>
     
     <ContentPage.Content>
         <StackLayout 

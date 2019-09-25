@@ -24,7 +24,6 @@
                 <On Platform="iOS">Ubuntu-B</On>
             </OnPlatform>
         </ResourceDictionary>
-        
     </Shell.Resources>
 
     
@@ -56,7 +55,6 @@
             </ShellContent>
         </ShellSection>
     </ShellItem>
-
 
     <TabBar Route="AppPage">
         <Tab Title="Search" Icon="ic_search">

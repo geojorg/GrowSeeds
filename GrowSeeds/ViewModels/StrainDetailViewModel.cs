@@ -1,13 +1,14 @@
 ﻿namespace GrowSeeds.ViewModels
 {
+    using GalaSoft.MvvmLight.Command;
     using Models;
     using System;
+    using System.Windows.Input;
     using Xamarin.Forms;
     [QueryProperty("SeedStrains", "id")]
     public class StrainDetailViewModel : BaseViewModel
     {
         #region Attributes
-        //private string id;
         private string name;
         private long rating;
         private TypeEnum type;
@@ -37,7 +38,6 @@
             }
         }
         #endregion
-
 
         #region Properties
         public string Name
@@ -76,6 +76,20 @@
             set { SetProperty(ref this.cbd, value); }
         }
 
+        #endregion
+
+        #region Command
+        public ICommand BackCommand
+        {
+            get
+            {
+                return new RelayCommand(Back);
+            }
+        }
+        private void Back()
+        {
+            Shell.Current.GoToAsync("//AppPage");
+        }
         #endregion
     }
 }
