@@ -5,6 +5,7 @@
     using System.Linq;
     using System;
     using System.Threading.Tasks;
+    using Models;
 
     public class StrainsSearchHandler : SearchHandler 
     {
@@ -24,7 +25,7 @@
         {
            base.OnItemSelected(item);
            await Task.Delay(1000);
-           await Shell.Current.GoToAsync("//InfoTab");
+           await (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"//Detail?name={((WeedStrain)item).Name}");
         }
     }
 }

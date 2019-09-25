@@ -49,6 +49,14 @@
             </ShellContent>
         </ShellSection>
     </ShellItem>
+    <ShellItem Route="Detail">
+        <ShellSection>
+            <ShellContent>
+                <local:StrainDetailPage/>
+            </ShellContent>
+        </ShellSection>
+    </ShellItem>
+
 
     <TabBar Route="AppPage">
         <Tab Title="Search" Icon="ic_search">

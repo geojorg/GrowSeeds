@@ -4,7 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="GrowSeeds.Views.InformationPage">
+             x:Class="GrowSeeds.Views.InformationPage"
+             Visual="Material"
+             Title="Strain Information">
+    
     <ContentPage.Content>
         <StackLayout>
             <Label Text="PAGINA CON TODA LA INFORMACION DE LA SEMILLA"
