@@ -25,7 +25,7 @@
         {
            base.OnItemSelected(item);
            await Task.Delay(1000);
-           await (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"//Detail?name={((WeedStrain)item).Name}");
+           await (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"//Detail?id={((WeedStrain)item).Id}");
         }
     }
 }

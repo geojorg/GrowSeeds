@@ -7,7 +7,7 @@
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
              x:DataType="viewModels:StrainDetailViewModel"
              x:Class="GrowSeeds.Views.StrainDetailPage"
-             Shell.NavBarIsVisible="False"
+ 
              Visual="Material"
              Title="Strain Details">
     
@@ -16,22 +16,25 @@
             x:DataType="viewModels:StrainDetailViewModel"
             Padding="10">
             <Label
-                Text="Hello piroberto"></Label>
-            <Label
                 Text="{Binding Name}">
-                
             </Label>
             <Label
                 Text="{Binding Rating}">
-                
-            </Label>
-            <Label
-                Text="{Binding Effects}">
-                
             </Label>
             <Label
                 Text="{Binding Type}">
-                
+            </Label>
+            <Label
+                Text="{Binding Effects}">
+            </Label>
+            <Label
+                Text="{Binding Flavor}">
+            </Label>
+            <Label
+                Text="{Binding Thc}">
+            </Label>
+            <Label
+                Text="{Binding Cbd}">
             </Label>
         </StackLayout>
     </ContentPage.Content>
