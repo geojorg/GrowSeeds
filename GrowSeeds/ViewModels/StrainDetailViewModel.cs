@@ -18,12 +18,15 @@
         private long thc;
         private long cbd;
         private bool isVisible;
+        private string plantName;
         #endregion
 
         #region Contructor
         public StrainDetailViewModel()
         {
             this.IsVisible = false;
+            this.PlantName = string.Empty;
+
             Stages = new List<StageInfo>();
             Stages.Add(new StageInfo
             { 
@@ -62,7 +65,6 @@
                     this.Flavor = strain.Flavor;
                     this.Thc = strain.Thc;
                     this.Cbd = strain.Cbd;
-                   
                 }
             }
         }
@@ -113,6 +115,11 @@
         {
             get;
             set;
+        }
+        public string PlantName
+        {
+            get { return this.plantName; }
+            set { SetProperty(ref this.plantName, value); }
         }
         #endregion
 

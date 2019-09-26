@@ -176,8 +176,11 @@
                         Grid.Column="1"
                         Grid.Row="0"
                         HorizontalOptions="Fill"
-                        VerticalOptions="Center"/>
-                    <Label
+                        Keyboard="Text"
+                        Text="{Binding PlantName}"
+                        VerticalOptions="Center">
+                    </Entry>
+                        <Label
                         Grid.Column="0"
                         Grid.Row="1"
                         FontSize="Body"
@@ -189,6 +192,7 @@
                         BackgroundColor="Transparent"
                         Grid.Column="1"
                         Grid.Row="1"
+                        SelectedItem="{Binding StageSelected}"
                         VerticalOptions="Center"/>
                     <Label
                         Grid.Column="0"
@@ -221,6 +225,7 @@
                 Command="{Binding SaveCommand}"
                 CornerRadius="12"
                 Grid.Row="4"
+                IsVisible="{Binding IsVisible}"
                 Text="Done"
                 Margin="20,0,20,15"
                 VerticalOptions="End"/>

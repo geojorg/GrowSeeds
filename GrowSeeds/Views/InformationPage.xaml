@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
              xmlns:views="clr-namespace:GrowSeeds.Views"
-             x:DataType="viewModels:InformationViewModel"
+             x:DataType="viewModels:StrainDetailViewModel"
              x:Class="GrowSeeds.Views.InformationPage"
              Visual="Material"
              Title="Seeds Information"
@@ -14,9 +14,13 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="PAGINA CON TODA LA INFORMACION DE LA SEMILLA"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label
+                Text="JODETE">
+                
+            </Label>
+            <ListView>
+                
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
