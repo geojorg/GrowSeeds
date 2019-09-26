@@ -24,7 +24,7 @@
                        FontSize="35"
                        FontFamily="{StaticResource UbuntuBold}"
                        HorizontalTextAlignment="Center"
-                       TextColor="#558b2f"
+                       TextColor="#3c725b"
                        Margin="10"/>
 
                     <Label 
@@ -32,7 +32,7 @@
                        FontSize="Body"
                        FontFamily="{StaticResource UbuntuBold}"
                        HorizontalTextAlignment="Center"
-                       TextColor="#558b2f"/>
+                       TextColor="#3c725b"/>
 
                     <StackLayout
                 Padding="20,20,20,50">
@@ -71,7 +71,7 @@
                         Orientation="Horizontal"
                         VerticalOptions="StartAndExpand">
                             <CheckBox x:Name="CheckBoxPassword"
-                        Color="#558b2f">
+                        Color="#659880">
                             </CheckBox>
                             <Label
                             Text="Show Password"
@@ -87,7 +87,7 @@
 
                             <Switch
                         IsToggled="{Binding IsRemembered, Mode=TwoWay}"
-                        ThumbColor="#558b2f"
+                        ThumbColor="#659880"
                         OnColor="#AFAFAF"/>
 
                             <Label
@@ -106,7 +106,7 @@
                     Padding="20,0,0,10"
                     Margin="30">
                         <Button
-                    BackgroundColor="#558b2f"
+                    BackgroundColor="#659880"
                     CornerRadius="25"
                     Command="{Binding LoginCommand}"
                     Grid.Row="0"

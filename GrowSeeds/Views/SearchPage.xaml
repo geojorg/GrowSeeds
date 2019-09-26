@@ -10,7 +10,8 @@
              x:DataType="viewModels:SearchViewModel"
              x:Class="GrowSeeds.Views.SearchPage"
              Visual="Material"
-             Title="Search">
+             Title="Search"
+             Shell.BackgroundColor="#3c725b">
     
     <ContentPage.Content>
         <StackLayout Padding="20,20,20,20">
@@ -20,7 +21,7 @@
                    VerticalOptions="CenterAndExpand">
             </Image>
             <ActivityIndicator
-                Color="#000000"
+                Color="#3c725b"
                 IsRunning="{Binding IsLoading}"
                 Margin="5">
             </ActivityIndicator>

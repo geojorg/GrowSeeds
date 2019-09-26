@@ -3,6 +3,7 @@
     using GalaSoft.MvvmLight.Command;
     using Models;
     using System;
+    using System.Collections.Generic;
     using System.Windows.Input;
     using Xamarin.Forms;
     [QueryProperty("SeedStrains", "id")]
@@ -16,9 +17,36 @@
         private string flavor;
         private long thc;
         private long cbd;
+        private bool isVisible;
         #endregion
 
         #region Contructor
+        public StrainDetailViewModel()
+        {
+            this.IsVisible = false;
+            Stages = new List<StageInfo>();
+            Stages.Add(new StageInfo
+            { 
+                Stage = "Germination",
+                Medium = "Soil"
+            });
+            Stages.Add(new StageInfo
+            { 
+                Stage = "Seedling",
+                Medium = "Compost"
+            });
+            Stages.Add(new StageInfo
+            {
+                Stage = "Vegetative",
+                Medium = "Coco"
+            }) ;
+            Stages.Add(new StageInfo
+            { 
+                Stage = "Flowering",
+                Medium = "Hydro"
+            });
+        }
+
         public string SeedStrains
         {
             set
@@ -34,6 +62,7 @@
                     this.Flavor = strain.Flavor;
                     this.Thc = strain.Thc;
                     this.Cbd = strain.Cbd;
+                   
                 }
             }
         }
@@ -75,7 +104,16 @@
             get { return this.cbd; }
             set { SetProperty(ref this.cbd, value); }
         }
-
+        public bool IsVisible
+        {
+            get { return this.isVisible; }
+            set { SetProperty(ref this.isVisible, value); }
+        }
+        public IList<StageInfo> Stages
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region Command
@@ -89,6 +127,31 @@
         private void Back()
         {
             Shell.Current.GoToAsync("//AppPage");
+        }
+
+        public ICommand CreateCommand
+        {
+            get
+            {
+                return new RelayCommand(Create);
+            }
+        }
+        private void Create()
+        {
+            this.IsVisible = true;
+        }
+
+        public ICommand SaveCommand
+        {
+            get
+            {
+                return new RelayCommand(Save);
+            }
+        }
+        
+        private void Save()
+        {
+            Shell.Current.GoToAsync("//InfoTab");
         }
         #endregion
     }

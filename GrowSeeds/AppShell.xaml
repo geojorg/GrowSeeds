@@ -23,7 +23,7 @@
                 <On Platform="Android">UbuntuBold.ttf#Ubuntu-B</On>
                 <On Platform="iOS">Ubuntu-B</On>
             </OnPlatform>
-            <Style x:Key="DetailShell" 
+            <Style x:Key="AppShell" 
                    TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="#3c725b"/>
             </Style>
@@ -55,7 +55,7 @@
     </ShellItem>
     <ShellItem 
         Route="Detail"
-        Style="{StaticResource DetailShell}">
+        Style="{StaticResource AppShell}">
         <ShellSection>
             <ShellContent>
                 <local:StrainDetailPage/>
@@ -63,16 +63,22 @@
         </ShellSection>
     </ShellItem>
 
-    <TabBar Route="AppPage">
-        <Tab Title="Search" Icon="ic_search">
+    <TabBar Route="AppPage"
+            Shell.BackgroundColor="white"
+            Shell.TabBarUnselectedColor="DimGray"
+            Shell.TabBarTitleColor="#3c725b">
+        <Tab Title="Search" 
+             Icon="ic_search">
             <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" 
                           Route="SearchTab"/>
         </Tab>
-        <Tab Title="Information" Icon="ic_info">
+        <Tab Title="Information" 
+             Icon="ic_info">
             <ShellContent ContentTemplate="{DataTemplate local:InformationPage}" 
                           Route="InfoTab"/>
         </Tab>
-        <Tab Title="Log" Icon="drawable/ic_log.png">
+        <Tab Title="Log" 
+             Icon="ic_log.png">
             <ShellContent ContentTemplate="{DataTemplate local:LogPage}" 
                           Route="LogTab"/>
         </Tab>

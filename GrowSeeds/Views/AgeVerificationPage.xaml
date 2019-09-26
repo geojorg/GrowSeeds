@@ -48,7 +48,7 @@
                     WidthRequest="150" >
 
                     <Button
-                    BackgroundColor="#558b2f"    
+                    BackgroundColor="#659880"    
                     Command="{Binding AcceptCommand}"
                     CornerRadius="15"
                     Grid.Row="0"
@@ -57,7 +57,7 @@
                     </Button>
 
                     <Button
-                    BackgroundColor="#558b2f"    
+                    BackgroundColor="#659880"    
                     Command="{Binding CancelCommand}"
                     CornerRadius="15"
                     Grid.Row="1"

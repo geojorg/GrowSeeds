@@ -4,7 +4,10 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="GrowSeeds.Views.LogPage">
+             x:Class="GrowSeeds.Views.LogPage"
+             Visual="Material"
+             Title="Log of Seeds"
+             Shell.BackgroundColor="#3c725b">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="PAGINA PARA EL LOG DE LA SEMILLA"

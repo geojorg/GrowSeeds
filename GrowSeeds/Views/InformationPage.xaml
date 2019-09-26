@@ -4,10 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
+             xmlns:views="clr-namespace:GrowSeeds.Views"
+             x:DataType="viewModels:InformationViewModel"
              x:Class="GrowSeeds.Views.InformationPage"
              Visual="Material"
-             Title="Strain Information">
-    
+             Title="Seeds Information"
+             Shell.BackgroundColor="#3c725b">
+
     <ContentPage.Content>
         <StackLayout>
             <Label Text="PAGINA CON TODA LA INFORMACION DE LA SEMILLA"

@@ -24,9 +24,11 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Image
             Aspect="Fill"
+            Grid.Row="0"
             HeightRequest="270"
             VerticalOptions="StartAndExpand"
             Source="Overlay.png"/>
@@ -51,13 +53,18 @@
                     HorizontalOptions="Center"
                     Text="{Binding Effects}" 
                     TextColor="White"/>
+                <Label 
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    Text="{Binding Flavor}" 
+                    TextColor="White"/>
             </StackLayout>
             <Frame 
                 CornerRadius="10"
                 Grid.Row="1" 
                 HasShadow="True"
                 HeightRequest="120" 
-                Margin="20,-50,20,0" 
+                Margin="20,-55,20,0" 
                 Padding="0" 
                 VerticalOptions="Start">
                 <Grid
@@ -140,6 +147,83 @@
                 </Grid>
                 
             </Frame>
+            <Button x:Name="SeedButton"
+                BackgroundColor="#659880"
+                Command="{Binding CreateCommand}"
+                Clicked="Fade_Clicked"
+                CornerRadius="12"
+                Grid.Row="2"
+                Margin="20,5,20,0"
+                Text="Create New Seed"
+                VerticalOptions="StartAndExpand"/>
+            <Frame
+                CornerRadius="10"
+                Grid.Row="3"
+                IsVisible="{Binding IsVisible}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        FontSize="Body"
+                        Text="Name:"
+                        VerticalOptions="Center"/>
+                    <Entry
+                        BackgroundColor="Transparent"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Center"/>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        FontSize="Body"
+                        Text="Stage"
+                        VerticalOptions="Center"/>
+                    <Picker
+                        ItemsSource="{Binding Stages}"
+                        ItemDisplayBinding="{Binding Stage}"
+                        BackgroundColor="Transparent"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        VerticalOptions="Center"/>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        FontSize="Body"
+                        Text="Date"
+                        VerticalOptions="Center"/>
+                    <DatePicker
+                        BackgroundColor="Transparent"
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        VerticalOptions="Center"/>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        FontSize="Body"
+                        Text="Medium:"
+                        VerticalOptions="Center"/>
+                    <Picker
+                        ItemsSource="{Binding Stages}"
+                        ItemDisplayBinding="{Binding Medium}"
+                        BackgroundColor="Transparent"
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+            <Button
+                BackgroundColor="#659880"
+                Command="{Binding SaveCommand}"
+                CornerRadius="12"
+                Grid.Row="4"
+                Text="Done"
+                Margin="20,0,20,15"
+                VerticalOptions="End"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

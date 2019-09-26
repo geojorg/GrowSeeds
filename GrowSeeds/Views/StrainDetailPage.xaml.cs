@@ -11,5 +11,9 @@
             InitializeComponent();
             BindingContext = new StrainDetailViewModel();
         }
+        async void Fade_Clicked(object sender, System.EventArgs e)
+        {
+            await SeedButton.FadeTo(0, 1000, Easing.SinInOut);
+        }
     }
 }
