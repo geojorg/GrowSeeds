@@ -196,5 +196,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_thc.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Overlay.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

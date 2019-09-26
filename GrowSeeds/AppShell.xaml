@@ -23,9 +23,14 @@
                 <On Platform="Android">UbuntuBold.ttf#Ubuntu-B</On>
                 <On Platform="iOS">Ubuntu-B</On>
             </OnPlatform>
+            <Style x:Key="DetailShell" 
+                   TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#3c725b"/>
+            </Style>
         </ResourceDictionary>
     </Shell.Resources>
 
+    <!--Pages and Routes-->
     
     <ShellItem Route="AgeVerification">
         <ShellSection>
@@ -48,7 +53,9 @@
             </ShellContent>
         </ShellSection>
     </ShellItem>
-    <ShellItem Route="Detail">
+    <ShellItem 
+        Route="Detail"
+        Style="{StaticResource DetailShell}">
         <ShellSection>
             <ShellContent>
                 <local:StrainDetailPage/>

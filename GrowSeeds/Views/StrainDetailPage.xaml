@@ -18,93 +18,128 @@
     </Shell.BackButtonBehavior>
     
     <ContentPage.Content>
-        <StackLayout 
-            x:DataType="viewModels:StrainDetailViewModel"
-            Padding="10">
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="{Binding Name}"
-                FontFamily="{StaticResource UbuntuBold}"
-                FontSize="34"/>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="90"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <Image
-                    Grid.Column="0"
-                    Grid.Row="0"
-                    Source="ic_star"/>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="1"
-                    Text="Rating"
-                    HorizontalOptions="Center"
-                    FontFamily="{StaticResource UbuntuBold}"/>
-                <Label
-                    Grid.Column="0"
-                    Grid.Row="2"
-                    Text="{Binding Rating}"
-                    FontFamily="{StaticResource UbuntuBold}"
-                    FontSize="30"
-                    HorizontalOptions="Center"/>
-                <Image
-                    Grid.Column="1"
-                    Grid.Row="0"
-                    Source="ic_thc"/>
-                <Label
-                    Grid.Column="1"
-                    Grid.Row="1"
-                    Text="Contains"
-                    HorizontalOptions="Center"
-                    FontFamily="{StaticResource UbuntuBold}"/>
-                <Label
-                    Grid.Column="1"
-                    Grid.Row="2"
-                    Text="{Binding Thc}"
-                    FontFamily="{StaticResource UbuntuBold}"
-                    FontSize="30"
-                    HorizontalOptions="Center"/>
-                <Image
-                    Grid.Column="2"
-                    Grid.Row="0"
-                    Source="ic_cbd"/>
-                <Label
-                    Grid.Column="2"
-                    Grid.Row="1"
-                    Text="Contains"
-                    HorizontalOptions="Center"
-                    FontFamily="{StaticResource UbuntuBold}"/>
-                <Label
-                    Grid.Column="2"
-                    Grid.Row="2"
-                    Text="{Binding Cbd}"
-                    FontFamily="{StaticResource UbuntuBold}"
-                    FontSize="30"
-                    HorizontalOptions="Center"/>
-            </Grid>
+        <Grid
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image
+            Aspect="Fill"
+            HeightRequest="270"
+            VerticalOptions="StartAndExpand"
+            Source="Overlay.png"/>
             <StackLayout
-                Padding="10"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand">
+                Orientation="Vertical"
+                Margin="0.20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
                 <Label
+                    FontFamily="{StaticResource UbuntuBold}"
+                    FontSize="34"
                     HorizontalOptions="CenterAndExpand"
-                    Text="{Binding Type}"
-                    FontSize="Large"/>
-                <Label
-                    HorizontalOptions="CenterAndExpand"
-                    Text="{Binding Effects}"
-                    FontSize="Medium"/>
-                <Label
-                    HorizontalOptions="CenterAndExpand"
-                    Text="{Binding Flavor}"
-                    FontSize="Medium"/>
+                    Text="{Binding Name}"
+                    TextColor="White"/>
+                <Label 
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text="{Binding Type}" 
+                    TextColor="White"/>
+                <Label 
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    Text="{Binding Effects}" 
+                    TextColor="White"/>
             </StackLayout>
-            <Button
-                Text="Add">
+            <Frame 
+                CornerRadius="10"
+                Grid.Row="1" 
+                HasShadow="True"
+                HeightRequest="120" 
+                Margin="20,-50,20,0" 
+                Padding="0" 
+                VerticalOptions="Start">
+                <Grid
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout
+                        Grid.Column="0"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Vertical"
+                        Spacing="8">
+                        <Image
+                            HeightRequest="50"
+                            HorizontalOptions="CenterAndExpand"
+                            Source="ic_star"/>
+                        <StackLayout
+                            Spacing="7"
+                            HorizontalOptions="CenterAndExpand">
+                            <Label
+                            FontFamily="{StaticResource UbuntuBold}"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="{Binding Rating}"/>
+                            <Label
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="Rating"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Column="1"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Vertical"
+                        Spacing="8">
+                        <Image
+                            HeightRequest="50"
+                            HorizontalOptions="CenterAndExpand"
+                            Source="ic_thc"/>
+                        <StackLayout
+                            Spacing="7"
+                            HorizontalOptions="CenterAndExpand">
+                            <Label
+                            FontFamily="{StaticResource UbuntuBold}"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="{Binding Thc}"/>
+                            <Label
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="THC"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout
+                        Grid.Column="2"
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Vertical"
+                        Spacing="8">
+                        <Image
+                            HeightRequest="50"
+                            HorizontalOptions="CenterAndExpand"
+                            Source="ic_cbd"/>
+                        <StackLayout
+                            Spacing="7"
+                            HorizontalOptions="CenterAndExpand">
+                            <Label
+                            FontFamily="{StaticResource UbuntuBold}"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="{Binding Cbd}"/>
+                            <Label
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="CBD"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
                 
-            </Button>
-        </StackLayout>
+            </Frame>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
