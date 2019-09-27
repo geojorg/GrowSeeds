@@ -38,7 +38,7 @@
         <controls:StrainsSearchHandler DisplayMemberName="Name"
                                        Placeholder="Find your Strain"
                                        ShowsResults="true"
-                                       SearchBoxVisibility="Collapsible">
+                                       SearchBoxVisibility="{Binding IsVisible}">
         <controls:StrainsSearchHandler.ItemTemplate>
                 <DataTemplate>
                     <views:StrainSearchItemView/>
