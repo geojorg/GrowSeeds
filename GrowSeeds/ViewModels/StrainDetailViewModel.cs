@@ -19,14 +19,15 @@
         private long cbd;
         private bool isVisible;
         private string plantName;
+        private object stageSelected;
+        private object mediumSelected;
+        private object dateSelected;
         #endregion
 
         #region Contructor
         public StrainDetailViewModel()
         {
             this.IsVisible = false;
-            this.PlantName = string.Empty;
-
             Stages = new List<StageInfo>();
             Stages.Add(new StageInfo
             { 
@@ -121,6 +122,22 @@
             get { return this.plantName; }
             set { SetProperty(ref this.plantName, value); }
         }
+
+        public object StageSelected
+        {
+            get { return this.stageSelected; }
+            set { SetProperty(ref this.stageSelected, value); }
+        }
+        public object MediumSelected
+        {
+            get { return this.mediumSelected; }
+            set { SetProperty(ref this.mediumSelected, value); }
+        }
+        public object DateSelected
+        {
+            get { return this.dateSelected; }
+            set { SetProperty(ref this.dateSelected, value); }
+        }
         #endregion
 
         #region Command
@@ -158,7 +175,13 @@
         
         private void Save()
         {
+            
             Shell.Current.GoToAsync("//InfoTab");
+            this.PlantName = string.Empty;
+            this.StageSelected = null;
+            this.MediumSelected = null;
+            this.DateSelected = System.DateTime.Now;
+            this.IsVisible = false;
         }
         #endregion
     }

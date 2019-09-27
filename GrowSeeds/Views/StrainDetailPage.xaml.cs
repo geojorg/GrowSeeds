@@ -15,5 +15,9 @@
         {
             await SeedButton.FadeTo(0, 1000, Easing.SinInOut);
         }
+        async void FadeOut_Clicked(object sender, System.EventArgs e)
+        {
+            await SeedButton.FadeTo(1, 2000, Easing.SinInOut);
+        }
     }
 }

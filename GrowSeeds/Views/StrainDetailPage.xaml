@@ -177,7 +177,7 @@
                         Grid.Row="0"
                         HorizontalOptions="Fill"
                         Keyboard="Text"
-                        Text="{Binding PlantName}"
+                        Text="{Binding PlantName, Mode=TwoWay}"
                         VerticalOptions="Center">
                     </Entry>
                         <Label
@@ -192,7 +192,7 @@
                         BackgroundColor="Transparent"
                         Grid.Column="1"
                         Grid.Row="1"
-                        SelectedItem="{Binding StageSelected}"
+                        SelectedItem="{Binding StageSelected, Mode=TwoWay}"
                         VerticalOptions="Center"/>
                     <Label
                         Grid.Column="0"
@@ -202,6 +202,7 @@
                         VerticalOptions="Center"/>
                     <DatePicker
                         BackgroundColor="Transparent"
+                        Date="{Binding DateSelected, Mode=TwoWay}"
                         Grid.Column="1"
                         Grid.Row="2"
                         VerticalOptions="Center"/>
@@ -217,12 +218,14 @@
                         BackgroundColor="Transparent"
                         Grid.Column="1"
                         Grid.Row="3"
+                        SelectedItem="{Binding MediumSelected, Mode=TwoWay}"
                         VerticalOptions="Center"/>
                 </Grid>
             </Frame>
             <Button
                 BackgroundColor="#659880"
                 Command="{Binding SaveCommand}"
+                Clicked="FadeOut_Clicked"
                 CornerRadius="12"
                 Grid.Row="4"
                 IsVisible="{Binding IsVisible}"
