@@ -175,7 +175,6 @@
         
         private void Save()
         {
-            
             Shell.Current.GoToAsync("//InfoTab");
             this.PlantName = string.Empty;
             this.StageSelected = null;

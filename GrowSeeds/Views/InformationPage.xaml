@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
              xmlns:views="clr-namespace:GrowSeeds.Views"
-             x:DataType="viewModels:StrainDetailViewModel"
+             x:DataType="viewModels:InformationViewModel"
              x:Class="GrowSeeds.Views.InformationPage"
              Visual="Material"
              Title="Seeds Information"
@@ -15,8 +15,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label
-                Text="JODETE">
-                
+                Text="{Binding Perra}">
             </Label>
             <ListView>
                 

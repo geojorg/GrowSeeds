@@ -9,7 +9,7 @@
         public InformationPage()
         {
             InitializeComponent();
-            BindingContext = new StrainDetailViewModel();
+            BindingContext = new InformationViewModel();
         }
     }
 }
