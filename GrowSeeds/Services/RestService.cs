@@ -37,12 +37,13 @@
 
 
         //Internet Validation
-        public static void ConectivityStatus()
+        public static bool ConectivityStatus()
         {
             var current = Connectivity.NetworkAccess;
             if (current == NetworkAccess.Internet)
             {
                 //Internet Connection is Ok
+                return true;
             }
             else
             {
@@ -50,6 +51,7 @@
                     "No Internet Connection",
                     "Please check your internet connection and try again",
                     "Ok");
+                return false;
             }
         }
     }

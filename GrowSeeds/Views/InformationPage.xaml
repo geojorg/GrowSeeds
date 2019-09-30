@@ -15,11 +15,8 @@
     <ContentPage.Content>
         <StackLayout>
             <Label
-                Text="{Binding Perra}">
+                Text="Test para ver si funciona">
             </Label>
-            <ListView>
-                
-            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

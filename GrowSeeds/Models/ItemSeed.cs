@@ -1,6 +1,6 @@
 ﻿namespace GrowSeeds.Models
 {
-    public class DataModel
+    public class ItemSeed
     {
         public string PlantName { get; set; }
         public string PlantStage { get; set; }

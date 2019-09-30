@@ -203,6 +203,7 @@
                     <DatePicker
                         BackgroundColor="Transparent"
                         Date="{Binding DateSelected, Mode=TwoWay}"
+                        Format="dd/MM/yyyy"
                         Grid.Column="1"
                         Grid.Row="2"
                         VerticalOptions="Center"/>

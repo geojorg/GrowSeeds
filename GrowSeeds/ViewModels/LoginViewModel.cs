@@ -3,7 +3,7 @@
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
     using Xamarin.Forms;
-
+    using Services;
     public class LoginViewModel: BaseViewModel
     {
         #region Attributes
@@ -35,28 +35,37 @@
         }
         private void Login()
         {
-            if (string.IsNullOrEmpty(this.Email) && string.IsNullOrEmpty(this.Password))
+            var IsConnected = RestService.ConectivityStatus();
+            if (IsConnected == true)
             {
-                this.EmailEmpty = "Red";
-                this.PasswordEmpty = "Red";
-                return;
-            }
-            else if (string.IsNullOrEmpty(this.Email))
-            {
-                this.EmailEmpty = "Red";
-                this.PasswordEmpty = "Transparent";
-            }
-            else if (string.IsNullOrEmpty(this.Password))
-            {
-                this.EmailEmpty = "Transparent";
-                this.PasswordEmpty = "Red";
+                if (string.IsNullOrEmpty(this.Email) && string.IsNullOrEmpty(this.Password))
+                {
+                    this.EmailEmpty = "Red";
+                    this.PasswordEmpty = "Red";
+                    return;
+                }
+                else if (string.IsNullOrEmpty(this.Email))
+                {
+                    this.EmailEmpty = "Red";
+                    this.PasswordEmpty = "Transparent";
+                }
+                else if (string.IsNullOrEmpty(this.Password))
+                {
+                    this.EmailEmpty = "Transparent";
+                    this.PasswordEmpty = "Red";
+                }
+                else
+                {
+                    this.EmailEmpty = "Transparent";
+                    this.PasswordEmpty = "Transparent";
+                    Shell.Current.GoToAsync("//AppPage");
+                }
             }
             else
             {
-                this.EmailEmpty = "Transparent";
-                this.PasswordEmpty = "Transparent";
-                Shell.Current.GoToAsync("//AppPage");
+                //Message from the RestService
             }
+            
         }
         public ICommand RegisterCommand
         {

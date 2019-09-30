@@ -1,19 +1,19 @@
 ﻿namespace GrowSeeds.ViewModels
 {
+    using Models;
+    using System.Collections.ObjectModel;
     using ViewModels;
-    public class InformationViewModel : StrainDetailViewModel
-    {
-        public string perra;
-        public string Perra
-        {
-            get { return this.perra; }
-            set { SetProperty(ref this.perra, value); }
-        }
+    using Xamarin.Forms;
 
+    public class InformationViewModel : BaseViewModel
+    {
+        #region Properties
+        #endregion
+
+        #region Constructor
         public InformationViewModel()
         {
-            this.Perra = PlantName;
         }
-           
+        #endregion
     }
 }

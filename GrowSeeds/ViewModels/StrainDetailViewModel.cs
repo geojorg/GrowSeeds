@@ -4,8 +4,10 @@
     using Models;
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Windows.Input;
     using Xamarin.Forms;
+
     [QueryProperty("SeedStrains", "id")]
     public class StrainDetailViewModel : BaseViewModel
     {
@@ -22,12 +24,14 @@
         private object stageSelected;
         private object mediumSelected;
         private object dateSelected;
+        
         #endregion
 
         #region Contructor
         public StrainDetailViewModel()
         {
             this.IsVisible = false;
+            
             Stages = new List<StageInfo>();
             Stages.Add(new StageInfo
             { 
@@ -176,12 +180,15 @@
         private void Save()
         {
             Shell.Current.GoToAsync("//InfoTab");
+            MessagingCenter.Send(PlantName, "AddItem");
             this.PlantName = string.Empty;
             this.StageSelected = null;
             this.MediumSelected = null;
             this.DateSelected = System.DateTime.Now;
             this.IsVisible = false;
+
         }
         #endregion
     }
+
 }
