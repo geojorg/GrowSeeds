@@ -20,7 +20,7 @@ namespace GrowSeeds.Web.Data.Entities
         [MinLength(6,ErrorMessage ="The {0} must be at least 6 characters long")]
         public string Password { get; set; }
 
-        public ICollection<PlantData> Plants { get; set; }
-        public ICollection<StrainDatabase> Strains { get; set; }
+        public PlantData Plant { get; set; }
+        
     }
 }

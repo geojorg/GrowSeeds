@@ -53,8 +53,7 @@ namespace GrowSeeds.Web.Data.Entities
         [Display (Name = "Plant Status")]
         public string PlantStatus { get; set; }
 
-        public ICollection<StrainDatabase> Strains { get; set; }
-
-
+        public ICollection<UserDatabase> Users { get; set; }
+        public StrainDatabase PlantStrain { get; set; }
     }
 }

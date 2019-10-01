@@ -50,16 +50,16 @@ namespace GrowSeeds.Web.Migrations
                     b.Property<string>("PlantStatus")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PlantStrainId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Strain")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserDatabaseId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserDatabaseId");
+                    b.HasIndex("PlantStrainId");
 
                     b.ToTable("PlantsData");
                 });
@@ -85,9 +85,6 @@ namespace GrowSeeds.Web.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<int?>("PlantDataId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Rating")
                         .HasColumnType("int");
 
@@ -98,14 +95,7 @@ namespace GrowSeeds.Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserDatabaseId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("PlantDataId");
-
-                    b.HasIndex("UserDatabaseId");
 
                     b.ToTable("StrainsDatabase");
                 });
@@ -129,27 +119,28 @@ namespace GrowSeeds.Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("PlantId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("PlantId");
 
                     b.ToTable("UsersDatabase");
                 });
 
             modelBuilder.Entity("GrowSeeds.Web.Data.Entities.PlantData", b =>
                 {
-                    b.HasOne("GrowSeeds.Web.Data.Entities.UserDatabase", null)
-                        .WithMany("Plants")
-                        .HasForeignKey("UserDatabaseId");
+                    b.HasOne("GrowSeeds.Web.Data.Entities.StrainDatabase", "PlantStrain")
+                        .WithMany("Strain")
+                        .HasForeignKey("PlantStrainId");
                 });
 
-            modelBuilder.Entity("GrowSeeds.Web.Data.Entities.StrainDatabase", b =>
+            modelBuilder.Entity("GrowSeeds.Web.Data.Entities.UserDatabase", b =>
                 {
-                    b.HasOne("GrowSeeds.Web.Data.Entities.PlantData", null)
-                        .WithMany("Strains")
-                        .HasForeignKey("PlantDataId");
-
-                    b.HasOne("GrowSeeds.Web.Data.Entities.UserDatabase", null)
-                        .WithMany("Strains")
-                        .HasForeignKey("UserDatabaseId");
+                    b.HasOne("GrowSeeds.Web.Data.Entities.PlantData", "Plant")
+                        .WithMany("Users")
+                        .HasForeignKey("PlantId");
                 });
 #pragma warning restore 612, 618
         }

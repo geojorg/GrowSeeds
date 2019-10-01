@@ -30,6 +30,6 @@ namespace GrowSeeds.Web.Data.Entities
 
         public string Flavor { get; set; }
 
-        
+        public ICollection<PlantData> Strain { get; set; }
     }
 }
