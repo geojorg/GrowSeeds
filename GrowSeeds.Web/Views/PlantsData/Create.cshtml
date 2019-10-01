@@ -1,0 +1,68 @@
+﻿@model GrowSeeds.Web.Data.Entities.PlantData
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>PlantData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Strain" class="control-label"></label>
+                <input asp-for="Strain" class="form-control" />
+                <span asp-validation-for="Strain" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlantName" class="control-label"></label>
+                <input asp-for="PlantName" class="form-control" />
+                <span asp-validation-for="PlantName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlantDate" class="control-label"></label>
+                <input asp-for="PlantDate" class="form-control" />
+                <span asp-validation-for="PlantDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlantStage" class="control-label"></label>
+                <input asp-for="PlantStage" class="form-control" />
+                <span asp-validation-for="PlantStage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastWater" class="control-label"></label>
+                <input asp-for="LastWater" class="form-control" />
+                <span asp-validation-for="LastWater" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastFeeding" class="control-label"></label>
+                <input asp-for="LastFeeding" class="form-control" />
+                <span asp-validation-for="LastFeeding" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlantMedium" class="control-label"></label>
+                <input asp-for="PlantMedium" class="form-control" />
+                <span asp-validation-for="PlantMedium" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlantStatus" class="control-label"></label>
+                <input asp-for="PlantStatus" class="form-control" />
+                <span asp-validation-for="PlantStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
