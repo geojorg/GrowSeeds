@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GrowSeeds.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191001163107_CompleteDb")]
+    [Migration("20191001201105_CompleteDb")]
     partial class CompleteDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,10 +55,6 @@ namespace GrowSeeds.Web.Migrations
                     b.Property<int?>("PlantStrainId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Strain")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("PlantStrainId");
@@ -83,7 +79,6 @@ namespace GrowSeeds.Web.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 

@@ -54,7 +54,7 @@ namespace GrowSeeds.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Strain,PlantName,PlantDate,PlantStage,LastWater,LastFeeding,PlantMedium,PlantStatus")] PlantData plantData)
+        public async Task<IActionResult> Create([Bind("Id,PlantName,PlantDate,PlantStage,LastWater,LastFeeding,PlantMedium,PlantStatus")] PlantData plantData)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace GrowSeeds.Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Strain,PlantName,PlantDate,PlantStage,LastWater,LastFeeding,PlantMedium,PlantStatus")] PlantData plantData)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,PlantName,PlantDate,PlantStage,LastWater,LastFeeding,PlantMedium,PlantStatus")] PlantData plantData)
         {
             if (id != plantData.Id)
             {

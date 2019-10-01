@@ -8,9 +8,6 @@ namespace GrowSeeds.Web.Data.Entities
         public int Id { get; set; }
 
         [Required]
-        public string Strain { get; set; }
-
-        [Required]
         [MaxLength(20)]
         [Display(Name = "Plant Name")]
         public string PlantName { get; set; }

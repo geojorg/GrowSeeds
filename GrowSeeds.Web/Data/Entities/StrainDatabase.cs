@@ -10,7 +10,6 @@ namespace GrowSeeds.Web.Data.Entities
     {
         public int Id { get; set; }
 
-        [Required]
         [Display(Name = "Strain")]
         [MaxLength(20, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         public string Name { get; set; }

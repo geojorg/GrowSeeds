@@ -21,6 +21,6 @@ namespace GrowSeeds.Web.Data.Entities
         public string Password { get; set; }
 
         public PlantData Plant { get; set; }
-        
+
     }
 }

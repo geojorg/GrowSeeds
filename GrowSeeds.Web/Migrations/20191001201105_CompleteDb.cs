@@ -13,7 +13,7 @@ namespace GrowSeeds.Web.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(maxLength: 20, nullable: false),
+                    Name = table.Column<string>(maxLength: 20, nullable: true),
                     Type = table.Column<string>(nullable: false),
                     Rating = table.Column<int>(nullable: false),
                     Thc = table.Column<int>(nullable: false),
@@ -32,7 +32,6 @@ namespace GrowSeeds.Web.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Strain = table.Column<string>(nullable: false),
                     PlantName = table.Column<string>(maxLength: 20, nullable: false),
                     PlantDate = table.Column<DateTime>(nullable: false),
                     PlantStage = table.Column<string>(nullable: false),

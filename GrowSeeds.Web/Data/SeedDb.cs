@@ -28,7 +28,8 @@ namespace GrowSeeds.Web.Data
             var plantStrain = _context.StrainsDatabase.FirstOrDefault();
             if (!_context.PlantsData.Any())
             {
-                AddPlant(plantStrain, "Hella", DateTime.Now, "Germination", DateTime.Now, DateTime.Now, "Soil", "Alive");
+                AddPlant(plantStrain, "Jelly", DateTime.Now, "Germination", DateTime.Now, DateTime.Now, "Soil", "Alive");
+                AddPlant(plantStrain, "Hella", DateTime.Now, "Germination", DateTime.Now, DateTime.Now, "Compost", "Alive");
                 await _context.SaveChangesAsync();
             }
         }
@@ -53,7 +54,7 @@ namespace GrowSeeds.Web.Data
                 LastFeeding = plantLastFeeding,
                 PlantMedium = plantMedium,
                 PlantStatus = plantStatus
-            }); ;
+            });
         }
         #endregion
 
