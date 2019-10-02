@@ -68,7 +68,6 @@ namespace GrowSeeds.Web.Controllers
             {
                 var role = "GeneralUser";
                 var user = await _userHelper.AddUser(model, role);
-                
                 if (user == null)
                 {
                     ModelState.AddModelError(string.Empty, "This email is already used.");
@@ -77,7 +76,6 @@ namespace GrowSeeds.Web.Controllers
 
                 var usergeneric = new UserDatabase
                 {
-                    Name = user,
                     Plants = new List<PlantData>()
                 };
                               
@@ -85,8 +83,8 @@ namespace GrowSeeds.Web.Controllers
                 await _dataContext.SaveChangesAsync();
                 return View(model);
             }
-            
 
+            return View(model);
         }
 
     }

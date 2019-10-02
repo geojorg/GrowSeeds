@@ -21,6 +21,11 @@ namespace GrowSeeds.Web.Helpers
             _signInManager = signInManager;
         }
 
+        public Task<UserDatabase> AddUser(RegisterViewModel view, string role)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public async Task<IdentityResult> AddUserAsync(UserDatabase user, string password)
         {
             return await _userManager.CreateAsync(user, password);
