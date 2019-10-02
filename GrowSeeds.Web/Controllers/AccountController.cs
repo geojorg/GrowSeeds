@@ -1,6 +1,10 @@
-﻿using GrowSeeds.Web.Helpers;
+﻿using GrowSeeds.Web.Data;
+using GrowSeeds.Web.Data.Entities;
+using GrowSeeds.Web.Helpers;
 using GrowSeeds.Web.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,9 +13,13 @@ namespace GrowSeeds.Web.Controllers
     public class AccountController : Controller
     {
         private readonly IUserHelper _userHelper;
+        private readonly DataContext _dataContext;
 
-        public AccountController(IUserHelper userHelper)
+        public AccountController(
+            DataContext dataContext,
+            IUserHelper userHelper)
         {
+            _dataContext = dataContext;
             _userHelper = userHelper;
         }
 
@@ -51,6 +59,36 @@ namespace GrowSeeds.Web.Controllers
             await _userHelper.LogoutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var role = "GeneralUser";
+                var user = await _userHelper.AddUser(model, role);
+                
+                if (user == null)
+                {
+                    ModelState.AddModelError(string.Empty, "This email is already used.");
+                    return View(model);
+                }
+
+                var usergeneric = new UserDatabase
+                {
+                    Name = user,
+                    Plants = new List<PlantData>()
+                };
+                              
+                _dataContext.UsersDatabase.Add(usergeneric);
+                await _dataContext.SaveChangesAsync();
+                return View(model);
+            }
+            
+
+        }
+
     }
 }
 

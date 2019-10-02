@@ -11,5 +11,6 @@ namespace GrowSeeds.Web.Data
         public DbSet<Manager> Managers { get; set; }
         public DbSet<PlantData> PlantsData { get; set; }
         public DbSet<StrainDatabase> StrainsDatabase { get; set; }
+        public DbSet<UserDatabase> UsersDatabase { get; set; }
     }
 }

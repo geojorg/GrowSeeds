@@ -11,9 +11,11 @@ namespace GrowSeeds.Web.Helpers
         Task<IdentityResult> AddUserAsync(UserDatabase user, string password);
         Task CheckRoleAsync(string roleName);
         Task AddUserToRoleAsync(UserDatabase user, string roleName);
+        Task<UserDatabase> AddUser(RegisterViewModel view, string role);
         Task<bool> IsUserInRoleAsync(UserDatabase user, string roleName);
         Task<SignInResult> LoginAsync(LoginViewModel model);
         Task LogoutAsync();
+      
     }
 }
 

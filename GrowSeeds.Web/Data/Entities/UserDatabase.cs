@@ -12,7 +12,6 @@ namespace GrowSeeds.Web.Data.Entities
         
         public string Name { get; set; }
 
-        public PlantData Plant { get; set; }
-
+        public ICollection<PlantData> Plants { get; set; }
     }
 }
