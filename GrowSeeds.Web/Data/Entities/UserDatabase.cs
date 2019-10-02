@@ -9,7 +9,7 @@ namespace GrowSeeds.Web.Data.Entities
 {
     public class UserDatabase : IdentityUser
     {
-        [Required]
+        
         public string Name { get; set; }
 
         public PlantData Plant { get; set; }

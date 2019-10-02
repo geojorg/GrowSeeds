@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using GrowSeeds.Web.Data.Entities;
 using Microsoft.AspNetCore.Identity;
+using GrowSeeds.Web.Models;
 
 namespace GrowSeeds.Web.Helpers
 {
@@ -8,13 +9,16 @@ namespace GrowSeeds.Web.Helpers
     {
         private readonly UserManager<UserDatabase> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly SignInManager<UserDatabase> _signInManager;
         
         public UserHelper(
             UserManager<UserDatabase> userManager,
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager,
+            SignInManager<UserDatabase> signInManager)
         {
             _userManager = userManager;
             _roleManager = roleManager;
+            _signInManager = signInManager;
         }
 
         public async Task<IdentityResult> AddUserAsync(UserDatabase user, string password)
@@ -47,6 +51,20 @@ namespace GrowSeeds.Web.Helpers
         public async Task<bool> IsUserInRoleAsync(UserDatabase user, string roleName)
         {
             return await _userManager.IsInRoleAsync(user, roleName);
+        }
+
+        public async Task<SignInResult> LoginAsync(LoginViewModel model)
+        {
+            return await _signInManager.PasswordSignInAsync(
+                model.Username,
+                model.Password,
+                model.RememberMe,
+                false);
+        }
+
+        public async Task LogoutAsync()
+        {
+            await _signInManager.SignOutAsync();
         }
     }
 }

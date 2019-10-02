@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using GrowSeeds.Web.Data.Entities;
+using GrowSeeds.Web.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace GrowSeeds.Web.Helpers
@@ -11,6 +12,8 @@ namespace GrowSeeds.Web.Helpers
         Task CheckRoleAsync(string roleName);
         Task AddUserToRoleAsync(UserDatabase user, string roleName);
         Task<bool> IsUserInRoleAsync(UserDatabase user, string roleName);
+        Task<SignInResult> LoginAsync(LoginViewModel model);
+        Task LogoutAsync();
     }
 }
 

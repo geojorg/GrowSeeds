@@ -1,25 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GrowSeeds.Web.Data.Entities;
+using GrowSeeds.Web.Helpers;
 
 namespace GrowSeeds.Web.Data
 {
     public class SeedDb
     {
         private readonly DataContext _context;
-        public SeedDb(DataContext context)
+        private readonly IUserHelper _userHelper;
+
+        public SeedDb(DataContext context, IUserHelper userHelper)
         {
             _context = context;
+            _userHelper = userHelper;
         }
 
         public async Task SeedAsync()
         {
             await _context.Database.EnsureCreatedAsync();
-            await CheckUsersAsync();
+            await CheckRoles();
+            var manager = await CheckUsersAsync("Jorge Guerrero", "geojorg@gmail.com", "Manager");
+            await CheckManagerAsync(manager);
+            await CheckUsersAsync("Andres Guerrero", "jorge.guerrero.montes@gmail.com", "GeneralUser");
             await CheckStrainsAsync();
             await CheckPlantsAsync();
+        }
+
+        private async Task CheckManagerAsync(UserDatabase user)
+        {
+            if (!_context.Managers.Any())
+            {
+                _context.Managers.Add(new Manager { User = user });
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        private async Task CheckRoles()
+        {
+            await _userHelper.CheckRoleAsync("Manager");
+            await _userHelper.CheckRoleAsync("GeneralUser");
         }
 
         #region PlantDatabase
@@ -91,26 +112,24 @@ namespace GrowSeeds.Web.Data
         #endregion
 
         #region UserDatabase
-        private async Task CheckUsersAsync()
+        private async Task <UserDatabase> CheckUsersAsync(
+            string name, 
+            string email, 
+            string role)
         {
-            if (!_context.UsersDatabase.Any())
+            var user = await _userHelper.GetUserByEmailAsync(email);
+            if (user == null)
             {
-                AddUser("Jorge Guerrero", "geojorg@gmail.com", "12345");
-                await _context.SaveChangesAsync();
+                user = new UserDatabase
+                {
+                    Name=name,
+                    Email=email,
+                    UserName=email
+                };
+                await _userHelper.AddUserAsync(user,"Jorgeguerrero1");
+                await _userHelper.AddUserToRoleAsync(user, role);
             }
-        }
-        private void AddUser(
-           string username,
-           string email,
-           string password
-           )
-        {
-            _context.UsersDatabase.Add(new Entities.UserDatabase
-            {
-                Name = username,
-                Email = email,
-                Password = password,                
-            });
+            return user;
         }
         #endregion
     }
