@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GrowSeeds.Web.Data;
 using GrowSeeds.Web.Data.Entities;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GrowSeeds.Web.Controllers
 {
+    [Authorize(Roles = "Manager")]
     public class ManagersController : Controller
     {
         private readonly DataContext _context;

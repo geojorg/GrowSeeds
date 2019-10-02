@@ -42,7 +42,7 @@ namespace GrowSeeds.Web.Controllers
                 }
             }
 
-            ModelState.AddModelError(string.Empty, "Failed to login.");
+            ModelState.AddModelError(string.Empty, "User or Password incorrect");
             return View(model);
         }
 

@@ -14,12 +14,12 @@ namespace GrowSeeds.Web.Data.Entities
 
         [Required]
         [Display(Name = "Plant Start Date")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime PlantDate { get; set; }
 
         [Required]
         [Display(Name = "Plant Start Date")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime PlantDateLocal => PlantDate.ToLocalTime();
 
         [Required]
@@ -27,21 +27,21 @@ namespace GrowSeeds.Web.Data.Entities
         public string PlantStage { get; set; }
 
         [Display(Name ="Last Watering")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime LastWater { get; set; }
 
         [Required]
         [Display(Name = "Plant Start Date")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime LastWaterLocal => LastWater.ToLocalTime();
 
         [Display(Name = "Last Feeding")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime LastFeeding { get; set; }
 
         [Required]
         [Display(Name = "Plant Start Date")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime LastFeedingLocal => LastFeeding.ToLocalTime();
 
         [Display(Name = "Plant Medium")]
