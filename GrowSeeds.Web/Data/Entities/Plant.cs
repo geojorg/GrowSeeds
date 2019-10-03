@@ -51,7 +51,7 @@ namespace GrowSeeds.Web.Data.Entities
         public string PlantStatus { get; set; }
 
         
-        public UserDatabase UserDatabase { get; set; }
-        public StrainDatabase PlantStrain { get; set; }
+        public User UserDatabase { get; set; }
+        public Strain PlantStrain { get; set; }
     }
 }

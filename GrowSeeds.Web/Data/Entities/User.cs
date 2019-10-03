@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace GrowSeeds.Web.Data.Entities
 {
-    public class UserDatabase : IdentityUser
+    public class User : IdentityUser
     {
-        
-        public string Name { get; set; }
-
         public ICollection<PlantData> Plants { get; set; }
     }
 }

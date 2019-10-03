@@ -7,12 +7,12 @@ namespace GrowSeeds.Web.Helpers
 {
     public interface IUserHelper
     {
-        Task<UserDatabase> GetUserByEmailAsync(string email);
-        Task<IdentityResult> AddUserAsync(UserDatabase user, string password);
+        Task<User> GetUserByEmailAsync(string email);
+        Task<IdentityResult> AddUserAsync(User user, string password);
         Task CheckRoleAsync(string roleName);
-        Task AddUserToRoleAsync(UserDatabase user, string roleName);
-        Task<UserDatabase> AddUser(RegisterViewModel view, string role);
-        Task<bool> IsUserInRoleAsync(UserDatabase user, string roleName);
+        Task AddUserToRoleAsync(User user, string roleName);
+        Task<User> AddUser(RegisterViewModel view, string role);
+        Task<bool> IsUserInRoleAsync(User user, string roleName);
         Task<SignInResult> LoginAsync(LoginViewModel model);
         Task LogoutAsync();
       

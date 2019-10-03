@@ -29,7 +29,6 @@ namespace GrowSeeds.Web.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-
             return View();
         }
 
@@ -45,12 +44,10 @@ namespace GrowSeeds.Web.Controllers
                     {
                         return Redirect(Request.Query["ReturnUrl"].First());
                     }
-
                     return RedirectToAction("Index", "Home");
                 }
+                ModelState.AddModelError(string.Empty, "User or Password incorrect");
             }
-
-            ModelState.AddModelError(string.Empty, "User or Password incorrect");
             return View(model);
         }
 
@@ -58,6 +55,11 @@ namespace GrowSeeds.Web.Controllers
         {
             await _userHelper.LogoutAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult Register()
+        {
+           return View();
         }
 
         [HttpPost]
@@ -74,7 +76,7 @@ namespace GrowSeeds.Web.Controllers
                     return View(model);
                 }
 
-                var usergeneric = new UserDatabase
+                var usergeneric = new User
                 {
                     Plants = new List<PlantData>()
                 };

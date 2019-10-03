@@ -28,7 +28,7 @@ namespace GrowSeeds.Web.Data
             await CheckPlantsAsync();
         }
 
-        private async Task CheckManagerAsync(UserDatabase user)
+        private async Task CheckManagerAsync(User user)
         {
             if (!_context.Managers.Any())
             {
@@ -55,7 +55,7 @@ namespace GrowSeeds.Web.Data
             }
         }
         private void AddPlant(
-            StrainDatabase plantStrain, 
+            Strain plantStrain, 
             string plantName,
             DateTime plantDate,
             string plantStage,
@@ -98,7 +98,7 @@ namespace GrowSeeds.Web.Data
             string strainEffect
             )
         {
-            _context.StrainsDatabase.Add(new Entities.StrainDatabase
+            _context.StrainsDatabase.Add(new Entities.Strain
             {
                 Name = strainName,
                 Type = strainType,
@@ -112,7 +112,7 @@ namespace GrowSeeds.Web.Data
         #endregion
 
         #region UserDatabase
-        private async Task <UserDatabase> CheckUsersAsync(
+        private async Task <User> CheckUsersAsync(
             string name, 
             string email, 
             string role)
@@ -120,7 +120,7 @@ namespace GrowSeeds.Web.Data
             var user = await _userHelper.GetUserByEmailAsync(email);
             if (user == null)
             {
-                user = new UserDatabase
+                user = new User
                 {
                     Name=name,
                     Email=email,

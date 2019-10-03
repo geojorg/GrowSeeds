@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrowSeeds.Web.Data.Entities
 {
-    public class StrainDatabase
+    public class Strain
     {
         public int Id { get; set; }
 
@@ -29,6 +29,6 @@ namespace GrowSeeds.Web.Data.Entities
 
         public string Flavor { get; set; }
 
-        public ICollection<PlantData> Strain { get; set; }
+        public ICollection<Plant> Strain { get; set; }
     }
 }

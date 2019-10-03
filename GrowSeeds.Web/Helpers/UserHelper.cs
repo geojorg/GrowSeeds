@@ -7,31 +7,44 @@ namespace GrowSeeds.Web.Helpers
 {
     public class UserHelper : IUserHelper
     {
-        private readonly UserManager<UserDatabase> _userManager;
+        private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly SignInManager<UserDatabase> _signInManager;
+        private readonly SignInManager<User> _signInManager;
         
         public UserHelper(
-            UserManager<UserDatabase> userManager,
+            UserManager<User> userManager,
             RoleManager<IdentityRole> roleManager,
-            SignInManager<UserDatabase> signInManager)
+            SignInManager<User> signInManager)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
         }
 
-        public Task<UserDatabase> AddUser(RegisterViewModel view, string role)
+        //TODO crear el AddUser
+        public async Task<User> AddUser(RegisterViewModel view, string role)
         {
-            throw new System.NotImplementedException();
+            var user = new User
+            {
+                UserName = view.Username,
+
+            };
+            var result = await AddUserAsync(user, view.Password);
+            if (result != IdentityResult.Success)
+            {
+                return null;
+            }
+            var newuser = await GetUserByEmailAsync(view.Username);
+            await AddUserToRoleAsync(newuser, role);
+            return newuser;
         }
 
-        public async Task<IdentityResult> AddUserAsync(UserDatabase user, string password)
+        public async Task<IdentityResult> AddUserAsync(User user, string password)
         {
             return await _userManager.CreateAsync(user, password);
         }
 
-        public async Task AddUserToRoleAsync(UserDatabase user, string roleName)
+        public async Task AddUserToRoleAsync(User user, string roleName)
         {
             await _userManager.AddToRoleAsync(user, roleName);
         }
@@ -48,12 +61,12 @@ namespace GrowSeeds.Web.Helpers
             }
         }
 
-        public async Task<UserDatabase> GetUserByEmailAsync(string email)
+        public async Task<User> GetUserByEmailAsync(string email)
         {
             return await _userManager.FindByEmailAsync(email);
         }
 
-        public async Task<bool> IsUserInRoleAsync(UserDatabase user, string roleName)
+        public async Task<bool> IsUserInRoleAsync(User user, string roleName)
         {
             return await _userManager.IsInRoleAsync(user, roleName);
         }
