@@ -68,7 +68,7 @@ namespace GrowSeeds.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var role = "GeneralUser";
+                var role = "Grower";
                 var user = await _userHelper.AddUser(model, role);
                 if (user == null)
                 {

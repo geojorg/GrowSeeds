@@ -24,6 +24,7 @@ namespace GrowSeeds.Web.Helpers
         {
             var user = new User
             {
+                Email = view.Username,
                 UserName = view.Username
             };
             var result = await AddUserAsync(user, view.Password);
