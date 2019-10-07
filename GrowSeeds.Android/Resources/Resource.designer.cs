@@ -8555,6 +8555,9 @@ namespace GrowSeeds.Droid
 			// aapt resource value: 0x7F07009A
 			public const int Wave = 2131165338;
 			
+			// aapt resource value: 0x7F07009B
+			public const int Welcome = 2131165339;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

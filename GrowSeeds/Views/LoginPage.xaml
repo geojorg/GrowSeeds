@@ -8,66 +8,88 @@
              x:DataType="viewModels:LoginViewModel"
              x:Class="GrowSeeds.Views.LoginPage"
              Shell.NavBarIsVisible="False"
-             Visual="Material">
+             Visual="Material"
+             BackgroundImageSource="Welcome">
 
     <ContentPage.Content>
         <ScrollView x:DataType="viewModels:LoginViewModel">
-            <StackLayout>
-                <Image 
-                       Aspect="AspectFill"   
-                       HorizontalOptions="Fill"
-                       HeightRequest="260"
-                       Source="Wave"/>
-                <StackLayout>
-                    <Label 
-                       Text="GrowSeed"
-                       FontSize="35"
+            <Grid
+            VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout
+                Grid.Row="0"
+                Orientation="Vertical"
+                HorizontalOptions="Center"
+                Margin="0,100,0,0"
+                VerticalOptions="Center">
+                    <Label      
+                       Text="GrowSeeds"
+                       FontSize="39"
                        FontFamily="{StaticResource UbuntuBold}"
                        HorizontalTextAlignment="Center"
-                       TextColor="#3c725b"
-                       Margin="10"/>
-
+                       TextColor="White"/>
                     <Label 
                        Text="The App for Growers"
                        FontSize="Body"
                        FontFamily="{StaticResource UbuntuBold}"
                        HorizontalTextAlignment="Center"
-                       TextColor="#3c725b"/>
-
-                    <StackLayout
-                Padding="20,20,20,50">
-
+                       TextColor="White"/>
+                </StackLayout>
+                <Frame 
+                CornerRadius="10"
+                Grid.Row="1" 
+                Margin="20,60,20,0" 
+                Padding="0" 
+                VerticalOptions="Start">
+                    <Grid
+                        VerticalOptions="FillAndExpand"
+                        Padding="20">
+                        <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                            
+                        </Grid.RowDefinitions>
+                        
+                        <StackLayout
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand">
                         <Entry
                         BackgroundColor="Transparent"
                         Keyboard="Email"
                         Placeholder="Email"
                         Text="{Binding Email, Mode=TwoWay}"/>
-                        
                         <Label
                         Text="Please insert a valid Email"
                         Margin="1"
                         TextColor="{Binding EmailEmpty, Mode=TwoWay}"/>
-
                         <Entry
                         BackgroundColor="Transparent"
                         Keyboard="Plain"
                         Placeholder="Password"
                         Text="{Binding Password, Mode=TwoWay}">
-                            <Entry.Triggers>
-                                <DataTrigger
+                                <Entry.Triggers>
+                                    <DataTrigger
                                 TargetType="Entry"
                                 Binding="{Binding Source={x:Reference CheckBoxPassword}, Path=IsChecked}"
                                 Value="false">
-                                    <Setter Property="IsPassword" Value="True"/>
-                                </DataTrigger>
-                            </Entry.Triggers>
-                        </Entry>
-
-                        <Label
+                                        <Setter Property="IsPassword" Value="True"/>
+                                    </DataTrigger>
+                                </Entry.Triggers>
+                            </Entry>
+                            <Label
                             Text="Please insert a valid Password"
                             Margin="1"
                             TextColor="{Binding PasswordEmpty, Mode=TwoWay}"/>
+                        </StackLayout>
                         <StackLayout
+                        Grid.Row="1"
                         Orientation="Horizontal"
                         VerticalOptions="StartAndExpand">
                             <CheckBox x:Name="CheckBoxPassword"
@@ -78,52 +100,46 @@
                             VerticalOptions="Center">
                             </Label>
                         </StackLayout>
-
                         <StackLayout
-                    Padding="0,10,0,0"
-                    Margin="10"
-                    Orientation="Horizontal"
-                    VerticalOptions="CenterAndExpand">
-
-                            <Switch
-                        IsToggled="{Binding IsRemembered, Mode=TwoWay}"
-                        ThumbColor="#659880"
-                        OnColor="#AFAFAF"/>
-
-                            <Label
-                        Text="Remember Me"
-                        HorizontalOptions="StartAndExpand"
-                        VerticalOptions="Center"/>
-
-                            <Label
-                        Text="Forgot Password?"
-                        TextColor="Blue"
-                        VerticalOptions="Center"/>
+                            Grid.Row="2"
+                            Orientation="Horizontal"
+                            Margin="0,20,0,0"
+                            VerticalOptions="CenterAndExpand">
+                                <Switch
+                                IsToggled="{Binding IsRemembered, Mode=TwoWay}"
+                                ThumbColor="#659880"
+                                OnColor="#AFAFAF"/>
+                                <Label
+                                Text="Remember Me"
+                                HorizontalOptions="StartAndExpand"
+                                VerticalOptions="Center"/>
+                                <Label
+                                Text="Forgot Password?"
+                                TextColor="Blue"
+                                VerticalOptions="Center"/>
                         </StackLayout>
-                    </StackLayout>
-
-                    <Grid
-                    Padding="20,0,0,10"
-                    Margin="30">
-                        <Button
-                    BackgroundColor="#659880"
+                        <StackLayout
+                    Margin="0,30,0,20"
+                    Grid.Row="4"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal">
+                    <Button
+                    BackgroundColor="#659880"  
                     CornerRadius="25"
                     Command="{Binding LoginCommand}"
-                    Grid.Row="0"
-                    Grid.Column="0"
                     Text = "Login"
                     TextColor="White"/>
-                        <Button
+                    <Button
                     BackgroundColor="#42AEE5"  
                     CornerRadius="25"
                     Command="{Binding RegisterCommand}"
-                    Grid.Row="0"
-                    Grid.Column="1"
                     Text = "Register"
                     TextColor="White"/>
+                        </StackLayout>
                     </Grid>
-                </StackLayout>
-            </StackLayout>
+                </Frame>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

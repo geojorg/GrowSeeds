@@ -1,0 +1,42 @@
+﻿@model GrowSeeds.Web.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form id="registerForm" method="post" action="/Identity/Account/Register">
+            <h4>Create a new account.</h4>
+            <hr />
+            <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
+                <ul>
+                    <li style="display:none"></li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label for="Input_Email">Email</label>
+                <input class="form-control" type="email" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Input_Email" name="Input.Email" value="" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Input.Email" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label for="Input_Password">Password</label>
+                <input class="form-control" type="password" data-val="true" data-val-length="The Password must be at least 6 and at max 100 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Input_Password" maxlength="100" name="Input.Password" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Input.Password" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label for="Input_ConfirmPassword">Confirm password</label>
+                <input class="form-control" type="password" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="Input_ConfirmPassword" name="Input.ConfirmPassword" />
+                <span class="text-danger field-validation-valid" data-valmsg-for="Input.ConfirmPassword" data-valmsg-replace="true"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="btn btn-primary">Register</button>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8MVNLm7iu8tGhiiBIRIhpXkehBfOzws__xKNgPaLBBVVa0BLIwkPuPK8u98lP-gYahLfh-JWmsnlygNWxa0W290htrOc-9y2yNipwSDYfmXZApKnhcaDhm9DjtUrUFONkarNKaHTsRNxS6pL0lvClr8" />
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-2">
+        
+    </div>
+</div>
+
+
+
