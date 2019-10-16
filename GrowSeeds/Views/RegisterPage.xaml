@@ -9,6 +9,7 @@
              x:DataType="viewModels:RegisterViewModel"
              x:Class="GrowSeeds.Views.RegisterPage"
              Shell.NavBarIsVisible="False"
+             Shell.FlyoutBehavior="Disabled"
              Visual="Material">
 
     <ContentPage.Content>
@@ -91,16 +92,6 @@
                     TextColor="White"/>
 
                 </StackLayout>
-
-
-                <Label Text="---------------------  Or Register With  ---------------------"
-                   HorizontalOptions="CenterAndExpand"/>
-
-                <ImageButton Source="GoogleLogo"
-                         BackgroundColor="Transparent"
-                         Command="{Binding LoginGoogleCommand}"
-                         Margin="10"
-                         WidthRequest="50"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

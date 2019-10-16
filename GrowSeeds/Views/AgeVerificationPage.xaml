@@ -9,6 +9,7 @@
              x:DataType="viewModels:AgeVerificationViewModel"
              x:Class="GrowSeeds.Views.AgeVerificationPage"
              Shell.NavBarIsVisible="False"
+             Shell.FlyoutBehavior="Disabled"
              Visual="Material">
 
     <ContentPage.Content>

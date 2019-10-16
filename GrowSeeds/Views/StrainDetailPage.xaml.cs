@@ -1,8 +1,8 @@
 ﻿namespace GrowSeeds.Views
 {
+    using ViewModels;
     using Xamarin.Forms;
     using Xamarin.Forms.Xaml;
-    using ViewModels;
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StrainDetailPage : ContentPage
     {

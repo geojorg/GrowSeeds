@@ -1,10 +1,10 @@
 ﻿namespace GrowSeeds.ViewModels
 {
-    using System.Windows.Input;
     using GalaSoft.MvvmLight.Command;
-    using Xamarin.Forms;
     using Services;
-    public class LoginViewModel: BaseViewModel
+    using System.Windows.Input;
+    using Xamarin.Forms;
+    public class LoginViewModel : BaseViewModel
     {
         #region Attributes
         private string email;
@@ -65,11 +65,11 @@
             {
                 //Message from the RestService
             }
-            
+
         }
         public ICommand RegisterCommand
         {
-            get 
+            get
             {
                 return new RelayCommand(Register);
             }
@@ -85,7 +85,7 @@
         public string Email
         {
             get { return this.email; }
-            set { SetProperty(ref this.email,value); }
+            set { SetProperty(ref this.email, value); }
         }
 
         public string EmailEmpty
@@ -104,7 +104,7 @@
             get { return this.passwordempty; }
             set { SetProperty(ref this.passwordempty, value); }
         }
-        
+
         public bool IsRemembered
         {
             get { return this.isRemembered; }

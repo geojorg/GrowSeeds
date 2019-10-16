@@ -1,13 +1,13 @@
 ﻿namespace GrowSeeds.Control
 {
-    using Xamarin.Forms;
-    using ViewModels;
-    using System.Linq;
-    using System;
-    using System.Threading.Tasks;
     using Models;
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using ViewModels;
+    using Xamarin.Forms;
 
-    public class StrainsSearchHandler : SearchHandler 
+    public class StrainsSearchHandler : SearchHandler
     {
         #region Properties
         public Type SelectedItemNavigationTarget { get; set; }
@@ -23,14 +23,14 @@
             }
             else
             {
-                ItemsSource = SearchViewModel.NameofStrains.Where(n => n.Name.StartsWith(newValue,StringComparison.InvariantCultureIgnoreCase));
+                ItemsSource = SearchViewModel.NameofStrains.Where(n => n.Name.StartsWith(newValue, StringComparison.InvariantCultureIgnoreCase));
             }
         }
         protected override async void OnItemSelected(object item)
         {
-           base.OnItemSelected(item);
-           await Task.Delay(1000);
-           await (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"//Detail?id={((WeedStrain)item).Id}");
+            base.OnItemSelected(item);
+            await Task.Delay(1000);
+            await (App.Current.MainPage as Xamarin.Forms.Shell).GoToAsync($"//Detail?id={((WeedStrain)item).Id}");
         }
         #endregion
     }

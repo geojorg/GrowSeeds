@@ -1,9 +1,9 @@
-﻿namespace GrowSeeds.ViewModels
+﻿using GalaSoft.MvvmLight.Command;
+using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace GrowSeeds.ViewModels
 {
-    using GalaSoft.MvvmLight.Command;
-    using System.Threading.Tasks;
-    using System.Windows.Input;
-    using Xamarin.Forms;
 
     public class AgeVerificationViewModel : BaseViewModel
     {

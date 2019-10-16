@@ -1,12 +1,10 @@
 ﻿namespace GrowSeeds
 {
-    using System;
-    using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
     using Utils;
+    using Xamarin.Forms;
     public partial class App : Application
     {
-        
+
         public string IsFirstTime
         {
             get { return Settings.GeneralSettings; }
@@ -17,7 +15,7 @@
                 Settings.GeneralSettings = value;
             }
         }
-        
+
         public App()
         {
             InitializeComponent();
@@ -26,7 +24,7 @@
                 IsFirstTime = "No";
                 MainPage = new AppShell();
             }
-           else
+            else
             {
                 MainPage = new AppShell();
                 Shell.Current.GoToAsync("//Login");

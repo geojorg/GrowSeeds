@@ -2,7 +2,6 @@
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
-using Plugin.GoogleClient;
 using Android.Content;
 
 namespace GrowSeeds.Droid
@@ -20,7 +19,7 @@ namespace GrowSeeds.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 0, 0, 0));
-            GoogleClientManager.Initialize(this);
+            //GoogleClientManager.Initialize(this);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -33,7 +32,7 @@ namespace GrowSeeds.Droid
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-            GoogleClientManager.OnAuthCompleted(requestCode, resultCode, data);
+            //GoogleClientManager.OnAuthCompleted(requestCode, resultCode, data);
         }
     }
 }

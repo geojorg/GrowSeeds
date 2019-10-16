@@ -11,6 +11,7 @@
              x:Class="GrowSeeds.Views.SearchPage"
              Visual="Material"
              Title="Search"
+             Shell.FlyoutBehavior="Disabled"
              Shell.BackgroundColor="#3c725b">
     
     <ContentPage.Content>

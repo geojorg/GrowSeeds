@@ -49,7 +49,7 @@
 
         #region Method
         private async void LoadPageEvent()
-        {   
+        {
             var response = await _restService.GetStrainsDataAsync(strainSourceData);
             NameofStrains = new List<WeedStrain>(response.WeedStrains.ToList());
             this.IsLoading = false;

@@ -1,9 +1,9 @@
 ﻿namespace GrowSeeds.Models
 {
-    using System;
-    using System.Globalization;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
+    using System;
+    using System.Globalization;
 
     public partial class StrainsData
     {
