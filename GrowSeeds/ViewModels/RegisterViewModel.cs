@@ -28,6 +28,9 @@ namespace GrowSeeds.ViewModels
             this.EmailEmpty = "Transparent";
             this.PasswordEmpty = "Transparent";
             this.Picture = "UserGeneric.png";
+            Name = string.Empty;
+            Email = string.Empty;
+            Password = string.Empty;
             //TODO IMPLEMENT GOOGLE SIGN IN
             //_googleClientManager = CrossGoogleClient.Current;
             IsLoggedIn = false;
@@ -44,16 +47,25 @@ namespace GrowSeeds.ViewModels
             }
         }
 
-        private void Register()
+        private async void Register()
         {
-            
-            isValidName();
-            isValidEmail(Email);
-            isValidPassword();
-           
+
+            var validname = IsValidName();
+            var validemail = IsValidEmail(Email);
+            var validpassword = IsValidPassword();
+
+            if (validname == true && validemail == true && validpassword == true)
+            {
+                await Application.Current.MainPage.DisplayAlert("New User", "User Creation Successful", "OK");
+                await Shell.Current.GoToAsync("//Login");
+            }
+            else
+            {
+
+            }
         }
 
-        private bool isValidName()
+        private bool IsValidName()
         {
             if (string.IsNullOrEmpty(Name))
             {
@@ -67,7 +79,7 @@ namespace GrowSeeds.ViewModels
             }
         }
 
-        private bool isValidEmail(string Email)
+        private bool IsValidEmail(string Email)
         {
             try
             {
@@ -82,7 +94,7 @@ namespace GrowSeeds.ViewModels
             }
         }
 
-        private bool isValidPassword()
+        private bool IsValidPassword()
         {
             if (string.IsNullOrEmpty(Password))
             {
