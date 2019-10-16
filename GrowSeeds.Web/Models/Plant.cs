@@ -51,7 +51,7 @@ namespace GrowSeeds.Web.Models
         [Display(Name = "Plant Status")]
         public string PlantStatus { get; set; }
 
-        public Grower Grower { get; set; }
-        public Strain Strain { get; set; }
+        public virtual Grower Grower { get; set; }
+        public virtual Strain Strain { get; set; }
     }
 }

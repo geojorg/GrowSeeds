@@ -76,13 +76,13 @@ namespace GrowSeeds.Web.Controllers
                     return View(model);
                 }
 
-                var grower = new Grower
+                var usergeneric = new Grower
                 {
                     Plants = new List<Plant>(),
                     User = user
                 };
 
-                _dataContext.Growers.Add(grower);
+                _dataContext.Growers.Add(usergeneric);
                 await _dataContext.SaveChangesAsync();
                 return View(model);
             }
