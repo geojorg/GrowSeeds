@@ -4,95 +4,123 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
              x:DataType="viewModels:RegisterViewModel"
              x:Class="GrowSeeds.Views.RegisterPage"
              Shell.NavBarIsVisible="False"
              Shell.FlyoutBehavior="Disabled"
-             Visual="Material">
+             Visual="Material"
+             BackgroundImageSource="Welcome">
 
     <ContentPage.Content>
         <ScrollView x:DataType="viewModels:RegisterViewModel">
-            <StackLayout
-                Padding="20,0,20,0">
+            <Grid
+            VerticalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-
-                <controls:CircleImage
-                    Aspect="AspectFit"
-                    Source="{Binding Picture}"
-                    Margin="20"
-                    WidthRequest="210"
-                    HeightRequest="210">
-
-                </controls:CircleImage>
                 <StackLayout
-                Padding="20,20,20,50">
-
-                    <Entry
+                Grid.Row="0"
+                Orientation="Vertical"
+                HorizontalOptions="Center"
+                Margin="0,100,0,0"
+                VerticalOptions="Center">
+                    <Label      
+                       Text="GrowSeeds"
+                       FontSize="39"
+                       FontFamily="{StaticResource UbuntuBold}"
+                       HorizontalTextAlignment="Center"
+                       TextColor="White"/>
+                    <Image
+                        Source="ic_account_circle">
+                    </Image>
+                </StackLayout>
+                <Frame 
+                CornerRadius="10"
+                Grid.Row="1" 
+                Margin="20,60,20,0" 
+                Padding="0" 
+                VerticalOptions="Start">
+                    <Grid
+                        VerticalOptions="FillAndExpand"
+                        Padding="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackLayout
+                        Grid.Column="0"
+                        HorizontalOptions="FillAndExpand">
+                            <Entry
                         BackgroundColor="Transparent"
+                        Keyboard="Default"
                         Placeholder="Name"
                         Text="{Binding Name, Mode=TwoWay}"/>
-
-                    <Label
-                        Text="This field can't be empty"
+                            <Label
+                        Text="Please insert a valid Name"
                         Margin="1"
                         TextColor="{Binding NameEmpty, Mode=TwoWay}"/>
-
-                    <Entry
+                            <Entry
                         BackgroundColor="Transparent"
                         Keyboard="Email"
                         Placeholder="Email"
                         Text="{Binding Email, Mode=TwoWay}"/>
-
-                    <Label
-                        Text="This field can't be empty"
+                            <Label
+                        Text="Please insert a valid Email"
                         Margin="1"
                         TextColor="{Binding EmailEmpty, Mode=TwoWay}"/>
-
-                    <Entry
+                            <Entry
                         BackgroundColor="Transparent"
+                        Keyboard="Default"
                         Placeholder="Password"
                         Text="{Binding Password, Mode=TwoWay}">
-                        <Entry.Triggers>
-                            <DataTrigger
+                                <Entry.Triggers>
+                                    <DataTrigger
                                 TargetType="Entry"
                                 Binding="{Binding Source={x:Reference CheckBoxPassword}, Path=IsChecked}"
                                 Value="false">
-                                <Setter Property="IsPassword" Value="True"/>
-                            </DataTrigger>
-                        </Entry.Triggers>
-                    </Entry>
-
-                    <Label
-                        Text="This field can't be empty"
-                        Margin="1"
-                        TextColor="{Binding PasswordEmpty, Mode=TwoWay}"/>
-
-                    <StackLayout
+                                        <Setter Property="IsPassword" Value="True"/>
+                                    </DataTrigger>
+                                </Entry.Triggers>
+                            </Entry>
+                            <Label
+                            Text="Please insert a valid Password"
+                            Margin="1"
+                            TextColor="{Binding PasswordEmpty, Mode=TwoWay}"/>
+                        </StackLayout>
+                        <StackLayout
+                        Grid.Row="1"
                         Orientation="Horizontal"
                         VerticalOptions="StartAndExpand">
-                        <CheckBox x:Name="CheckBoxPassword"
-                        Color="#558b2f">
-                        </CheckBox>
-                        <Label
+                            <CheckBox x:Name="CheckBoxPassword"
+                        Color="#659880">
+                            </CheckBox>
+                            <Label
                             Text="Show Password"
                             VerticalOptions="Center">
-                        </Label>
-                    </StackLayout>
-
-                    <Button
-                    BackgroundColor="#558b2f"  
+                            </Label>
+                        </StackLayout>
+                        <StackLayout
+                    Margin="0,30,0,20"
+                    Grid.Row="4"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal">
+                            <Button
+                    BackgroundColor="#42AEE5"  
                     CornerRadius="25"
                     Command="{Binding RegisterCommand}"
-                    Grid.Row="0"
-                    Grid.Column="1"
-                    Margin="20"
-                    Text = "Register"
+                    Text = "Create"
                     TextColor="White"/>
-
-                </StackLayout>
-            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </Frame>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage> 

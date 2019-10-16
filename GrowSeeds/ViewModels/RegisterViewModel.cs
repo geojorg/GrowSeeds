@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using GrowSeeds.Models;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -27,7 +28,7 @@ namespace GrowSeeds.ViewModels
             this.EmailEmpty = "Transparent";
             this.PasswordEmpty = "Transparent";
             this.Picture = "UserGeneric.png";
-            //TODO IMPLEMENT GOOGLE 
+            //TODO IMPLEMENT GOOGLE SIGN IN
             //_googleClientManager = CrossGoogleClient.Current;
             IsLoggedIn = false;
         }
@@ -45,32 +46,54 @@ namespace GrowSeeds.ViewModels
 
         private void Register()
         {
-            if (string.IsNullOrEmpty(this.Name))
-            {
-                this.NameEmpty = "Red";
-            }
-            else
-            {
-                this.NameEmpty = "Transparent";
-            }
-            if (string.IsNullOrEmpty(this.Email))
-            {
-                this.EmailEmpty = "Red";
-            }
-            else
-            {
-                this.EmailEmpty = "Transparent";
-            }
-            if (string.IsNullOrEmpty(this.Password))
-            {
-                this.PasswordEmpty = "Red";
-            }
-            else
-            {
-                this.PasswordEmpty = "Transparent";
-                Shell.Current.GoToAsync("//Login");
-            }
+            
+            isValidName();
+            isValidEmail(Email);
+            isValidPassword();
+           
+        }
 
+        private bool isValidName()
+        {
+            if (string.IsNullOrEmpty(Name))
+            {
+                NameEmpty = "Red";
+                return false;
+            }
+            else
+            {
+                NameEmpty = "Transparent";
+                return true;
+            }
+        }
+
+        private bool isValidEmail(string Email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(Email);
+                EmailEmpty = "Transparent";
+                return addr.Address == email;
+            }
+            catch
+            {
+                EmailEmpty = "Red";
+                return false;
+            }
+        }
+
+        private bool isValidPassword()
+        {
+            if (string.IsNullOrEmpty(Password))
+            {
+                PasswordEmpty = "Red";
+                return false;
+            }
+            else
+            {
+                PasswordEmpty = "Transparent";
+                return true;
+            }
         }
 
         //public ICommand LoginGoogleCommand

@@ -55,9 +55,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                            
                         </Grid.RowDefinitions>
-                        
                         <StackLayout
                         Grid.Column="0"
                         HorizontalOptions="FillAndExpand">
