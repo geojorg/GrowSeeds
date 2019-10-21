@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using GrowSeeds.Helpers;
 using GrowSeeds.Models;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -54,8 +55,11 @@ namespace GrowSeeds.ViewModels
 
             if (validname == true && validemail == true && validpassword == true)
             {
-                await Application.Current.MainPage.DisplayAlert("New User", "User Creation Successful", "OK");
+                await Application.Current.MainPage.DisplayAlert(Languages.NewUser, Languages.Creatingsuccessful, "OK");
                 await Shell.Current.GoToAsync("//Login");
+                Name = string.Empty;
+                Email = string.Empty;
+                Password = string.Empty;
             }
             else
             {

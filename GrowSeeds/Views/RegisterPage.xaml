@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
+             xmlns:i18n="clr-namespace:GrowSeeds.Helpers"
              x:DataType="viewModels:RegisterViewModel"
              x:Class="GrowSeeds.Views.RegisterPage"
              Shell.NavBarIsVisible="False"
@@ -59,10 +60,10 @@
                             <Entry
                         BackgroundColor="Transparent"
                         Keyboard="Default"
-                        Placeholder="Name"
+                        Placeholder="{i18n:TranslateExtension Name}"
                         Text="{Binding Name, Mode=TwoWay}"/>
                             <Label
-                        Text="Please insert a valid Name"
+                        Text="{i18n:TranslateExtension ValidName}"
                         Margin="1"
                         TextColor="{Binding NameEmpty, Mode=TwoWay}"/>
                             <Entry
@@ -71,13 +72,13 @@
                         Placeholder="Email"
                         Text="{Binding Email, Mode=TwoWay}"/>
                             <Label
-                        Text="Please insert a valid Email"
+                        Text="{i18n:TranslateExtension ValidEmail}"
                         Margin="1"
                         TextColor="{Binding EmailEmpty, Mode=TwoWay}"/>
                             <Entry
                         BackgroundColor="Transparent"
                         Keyboard="Default"
-                        Placeholder="Password"
+                        Placeholder="{i18n:TranslateExtension Password}"
                         Text="{Binding Password, Mode=TwoWay}">
                                 <Entry.Triggers>
                                     <DataTrigger
@@ -89,7 +90,7 @@
                                 </Entry.Triggers>
                             </Entry>
                             <Label
-                            Text="Please insert a valid Password"
+                            Text="{i18n:TranslateExtension ValidPsw}"
                             Margin="1"
                             TextColor="{Binding PasswordEmpty, Mode=TwoWay}"/>
                         </StackLayout>
@@ -101,7 +102,7 @@
                         Color="#659880">
                             </CheckBox>
                             <Label
-                            Text="Show Password"
+                            Text="{i18n:TranslateExtension ShowPsw}"
                             VerticalOptions="Center">
                             </Label>
                         </StackLayout>
@@ -115,7 +116,7 @@
                     BackgroundColor="#42AEE5"  
                     CornerRadius="25"
                     Command="{Binding RegisterCommand}"
-                    Text = "Create"
+                    Text = "{i18n:TranslateExtension Create}"
                     TextColor="White"/>
                         </StackLayout>
                     </Grid>

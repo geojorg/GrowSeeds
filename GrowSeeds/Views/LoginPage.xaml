@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
+             xmlns:i18n="clr-namespace:GrowSeeds.Helpers"
              x:DataType="viewModels:LoginViewModel"
              x:Class="GrowSeeds.Views.LoginPage"
              Shell.NavBarIsVisible="False"
@@ -35,7 +36,7 @@
                        HorizontalTextAlignment="Center"
                        TextColor="White"/>
                     <Label 
-                       Text="The App for Growers"
+                       Text="{i18n:TranslateExtension Tittle}"
                        FontSize="Body"
                        FontFamily="{StaticResource UbuntuBold}"
                        HorizontalTextAlignment="Center"
@@ -65,13 +66,13 @@
                         Placeholder="Email"
                         Text="{Binding Email, Mode=TwoWay}"/>
                         <Label
-                        Text="Please insert a valid Email"
+                        Text="{i18n:TranslateExtension ValidEmail}"
                         Margin="1"
                         TextColor="{Binding EmailEmpty, Mode=TwoWay}"/>
                         <Entry
                         BackgroundColor="Transparent"
                         Keyboard="Plain"
-                        Placeholder="Password"
+                        Placeholder="{i18n:TranslateExtension Password}"
                         Text="{Binding Password, Mode=TwoWay}">
                                 <Entry.Triggers>
                                     <DataTrigger
@@ -83,7 +84,7 @@
                                 </Entry.Triggers>
                             </Entry>
                             <Label
-                            Text="Please insert a valid Password"
+                            Text="{i18n:TranslateExtension ValidPsw}"
                             Margin="1"
                             TextColor="{Binding PasswordEmpty, Mode=TwoWay}"/>
                         </StackLayout>
@@ -95,7 +96,7 @@
                         Color="#659880">
                             </CheckBox>
                             <Label
-                            Text="Show Password"
+                            Text="{i18n:TranslateExtension ShowPsw}"
                             VerticalOptions="Center">
                             </Label>
                         </StackLayout>
@@ -109,11 +110,11 @@
                                 ThumbColor="#659880"
                                 OnColor="#AFAFAF"/>
                                 <Label
-                                Text="Remember Me"
+                                Text="{i18n:TranslateExtension Remember}"
                                 HorizontalOptions="StartAndExpand"
                                 VerticalOptions="Center"/>
                                 <Label
-                                Text="Forgot Password?"
+                                Text="{i18n:TranslateExtension ForgotPsw}"
                                 TextColor="Blue"
                                 VerticalOptions="Center"/>
                         </StackLayout>
@@ -127,13 +128,13 @@
                     BackgroundColor="#659880"  
                     CornerRadius="25"
                     Command="{Binding LoginCommand}"
-                    Text = "Login"
+                    Text = "{i18n:TranslateExtension Login}"
                     TextColor="White"/>
                     <Button
                     BackgroundColor="#42AEE5"  
                     CornerRadius="25"
                     Command="{Binding RegisterCommand}"
-                    Text = "Register"
+                    Text = "{i18n:TranslateExtension Register}"
                     TextColor="White"/>
                         </StackLayout>
                     </Grid>
