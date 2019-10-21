@@ -1,9 +1,10 @@
-﻿namespace GrowSeeds.ViewModels
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+namespace GrowSeeds.ViewModels
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Runtime.CompilerServices;
     public class BaseViewModel : INotifyPropertyChanged
     {
         #region INotifyPropertyChanged

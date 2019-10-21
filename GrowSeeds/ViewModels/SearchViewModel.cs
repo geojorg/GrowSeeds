@@ -1,10 +1,11 @@
-﻿namespace GrowSeeds.ViewModels
+﻿using GrowSeeds.Models;
+using GrowSeeds.Services;
+using System.Collections.Generic;
+using System.Linq;
+using Xamarin.Forms;
+
+namespace GrowSeeds.ViewModels
 {
-    using Models;
-    using Services;
-    using System.Collections.Generic;
-    using System.Linq;
-    using Xamarin.Forms;
     public class SearchViewModel : BaseViewModel
     {
         #region Attributes

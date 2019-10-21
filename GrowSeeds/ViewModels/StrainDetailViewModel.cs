@@ -1,12 +1,12 @@
-﻿namespace GrowSeeds.ViewModels
-{
-    using GalaSoft.MvvmLight.Command;
-    using Models;
-    using System;
-    using System.Collections.Generic;
-    using System.Windows.Input;
-    using Xamarin.Forms;
+﻿using GalaSoft.MvvmLight.Command;
+using GrowSeeds.Models;
+using System;
+using System.Collections.Generic;
+using System.Windows.Input;
+using Xamarin.Forms;
 
+namespace GrowSeeds.ViewModels
+{
     [QueryProperty("SeedStrains", "id")]
     public class StrainDetailViewModel : BaseViewModel
     {

@@ -1,9 +1,10 @@
-﻿namespace GrowSeeds.ViewModels
+﻿using GalaSoft.MvvmLight.Command;
+using GrowSeeds.Services;
+using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace GrowSeeds.ViewModels
 {
-    using GalaSoft.MvvmLight.Command;
-    using Services;
-    using System.Windows.Input;
-    using Xamarin.Forms;
     public class LoginViewModel : BaseViewModel
     {
         #region Attributes

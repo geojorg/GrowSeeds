@@ -1,8 +1,9 @@
-﻿namespace GrowSeeds
+﻿using System;
+using Xamarin.Essentials;
+using Xamarin.Forms;
+
+namespace GrowSeeds
 {
-    using System;
-    using Xamarin.Essentials;
-    using Xamarin.Forms;
     public class HyperlinkSpan : Span
     {
         public static readonly BindableProperty UrlProperty = BindableProperty.Create(nameof(Url), typeof(string), typeof(HyperlinkSpan), null);
