@@ -117,17 +117,62 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Accept" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="AgeConfirmation" xml:space="preserve">
+    <value>I confirm that I am 18 years of age or older and that I agree with the </value>
+  </data>
+  <data name="AgeQst" xml:space="preserve">
+    <value>Are you over 18 years old?</value>
+  </data>
+  <data name="Coco" xml:space="preserve">
+    <value>Coco</value>
+  </data>
+  <data name="Compost" xml:space="preserve">
+    <value>Compost</value>
+  </data>
   <data name="Create" xml:space="preserve">
     <value>Create</value>
+  </data>
+  <data name="CreateNew" xml:space="preserve">
+    <value>Create New Seed</value>
   </data>
   <data name="Creatingsuccessful" xml:space="preserve">
     <value>User Creation Successful</value>
   </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Flowering" xml:space="preserve">
+    <value>Flowering</value>
+  </data>
   <data name="ForgotPsw" xml:space="preserve">
     <value>Forgot Password?</value>
   </data>
+  <data name="Germination" xml:space="preserve">
+    <value>Germination</value>
+  </data>
+  <data name="Hydro" xml:space="preserve">
+    <value>Hydro</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="LegalWarn" xml:space="preserve">
+    <value>In order to use GrowSeeds it is important that you meet the minimum legal requirements of your region, so that you can see information related to cannabis.</value>
+  </data>
+  <data name="Log" xml:space="preserve">
+    <value>Log</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Medium</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
@@ -138,14 +183,44 @@
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="Policy" xml:space="preserve">
+    <value>Privacy Policy.</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Register</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Reject</value>
   </data>
   <data name="Remember" xml:space="preserve">
     <value>Remember Me</value>
   </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchPlaceholder" xml:space="preserve">
+    <value>Find your Strain...</value>
+  </data>
+  <data name="SearchTxt" xml:space="preserve">
+    <value>Search for your specific cannabis strain to start using GrowSeeds</value>
+  </data>
+  <data name="Seedling" xml:space="preserve">
+    <value>Seedling</value>
+  </data>
   <data name="ShowPsw" xml:space="preserve">
     <value>Show Password</value>
+  </data>
+  <data name="Soil" xml:space="preserve">
+    <value>Soil</value>
+  </data>
+  <data name="Stage" xml:space="preserve">
+    <value>Stage</value>
+  </data>
+  <data name="StrainDtl" xml:space="preserve">
+    <value>Strain Detail</value>
+  </data>
+  <data name="Terms" xml:space="preserve">
+    <value>Terms of use </value>
   </data>
   <data name="Tittle" xml:space="preserve">
     <value>The App for Growers</value>
@@ -158,5 +233,8 @@
   </data>
   <data name="ValidPsw" xml:space="preserve">
     <value>Please insert a valid Password</value>
+  </data>
+  <data name="Vegetative" xml:space="preserve">
+    <value>Vegetative</value>
   </data>
 </root>

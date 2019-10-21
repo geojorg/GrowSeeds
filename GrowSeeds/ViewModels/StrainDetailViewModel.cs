@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
+using GrowSeeds.Helpers;
 
 namespace GrowSeeds.ViewModels
 {
@@ -34,23 +35,23 @@ namespace GrowSeeds.ViewModels
             Stages = new List<StageInfo>();
             Stages.Add(new StageInfo
             {
-                Stage = "Germination",
-                Medium = "Soil"
+                Stage = Languages.Germination,
+                Medium = Languages.Soil
             });
             Stages.Add(new StageInfo
             {
-                Stage = "Seedling",
-                Medium = "Compost"
+                Stage = Languages.Seedling,
+                Medium = Languages.Compost
             });
             Stages.Add(new StageInfo
             {
-                Stage = "Vegetative",
-                Medium = "Coco"
+                Stage = Languages.Vegetative,
+                Medium = Languages.Coco
             });
             Stages.Add(new StageInfo
             {
-                Stage = "Flowering",
-                Medium = "Hydro"
+                Stage = Languages.Flowering,
+                Medium = Languages.Hydro
             });
         }
 

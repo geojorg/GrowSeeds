@@ -5,10 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
+             xmlns:i18n="clr-namespace:GrowSeeds.Helpers"
              x:DataType="viewModels:StrainDetailViewModel"
              x:Class="GrowSeeds.Views.StrainDetailPage"
              Visual="Material"
-             Title="Strain Details">
+             Title="{i18n:TranslateExtension StrainDtl}">
     
     <Shell.BackButtonBehavior>
         <BackButtonBehavior
@@ -154,7 +155,7 @@
                 CornerRadius="12"
                 Grid.Row="2"
                 Margin="20,5,20,0"
-                Text="Create New Seed"
+                Text="{i18n:TranslateExtension CreateNew}"
                 VerticalOptions="StartAndExpand"/>
             <Frame
                 CornerRadius="10"
@@ -169,7 +170,7 @@
                         Grid.Column="0"
                         Grid.Row="0"
                         FontSize="Body"
-                        Text="Name:"
+                        Text="{i18n:TranslateExtension Name}"
                         VerticalOptions="Center"/>
                     <Entry
                         BackgroundColor="Transparent"
@@ -184,7 +185,7 @@
                         Grid.Column="0"
                         Grid.Row="1"
                         FontSize="Body"
-                        Text="Stage"
+                        Text="{i18n:TranslateExtension Stage}"
                         VerticalOptions="Center"/>
                     <Picker
                         ItemsSource="{Binding Stages}"
@@ -198,7 +199,7 @@
                         Grid.Column="0"
                         Grid.Row="2"
                         FontSize="Body"
-                        Text="Date"
+                        Text="{i18n:TranslateExtension Date}"
                         VerticalOptions="Center"/>
                     <DatePicker
                         BackgroundColor="Transparent"
@@ -211,7 +212,7 @@
                         Grid.Column="0"
                         Grid.Row="3"
                         FontSize="Body"
-                        Text="Medium:"
+                        Text="{i18n:TranslateExtension Medium}"
                         VerticalOptions="Center"/>
                     <Picker
                         ItemsSource="{Binding Stages}"
@@ -230,7 +231,7 @@
                 CornerRadius="12"
                 Grid.Row="4"
                 IsVisible="{Binding IsVisible}"
-                Text="Done"
+                Text="{i18n:TranslateExtension Done}"
                 Margin="20,0,20,15"
                 VerticalOptions="End"/>
         </Grid>

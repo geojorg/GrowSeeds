@@ -6,11 +6,12 @@
              mc:Ignorable="d"
              xmlns:controls="clr-namespace:GrowSeeds.Control"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
+             xmlns:i18n="clr-namespace:GrowSeeds.Helpers"
              xmlns:views="clr-namespace:GrowSeeds.Views"
              x:DataType="viewModels:SearchViewModel"
              x:Class="GrowSeeds.Views.SearchPage"
              Visual="Material"
-             Title="Search"
+             Title="{i18n:TranslateExtension Search}"
              Shell.FlyoutBehavior="Disabled"
              Shell.BackgroundColor="#3c725b">
     
@@ -30,14 +31,14 @@
                 FontSize="Medium"
                 HorizontalOptions="CenterAndExpand"
                 Margin="20"
-                Text="Search for your specific cannabis strain to start using GrowSeeds"
+                Text="{i18n:TranslateExtension SearchTxt}"
                 VerticalOptions="StartAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
     
     <Shell.SearchHandler>
         <controls:StrainsSearchHandler DisplayMemberName="Name"
-                                       Placeholder="Find your Strain"
+                                       Placeholder="{i18n:TranslateExtension SearchPlaceholder}"
                                        ShowsResults="true"
                                        SearchBoxVisibility="{Binding IsVisible}">
         <controls:StrainsSearchHandler.ItemTemplate>

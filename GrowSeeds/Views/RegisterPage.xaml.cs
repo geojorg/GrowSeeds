@@ -1,8 +1,11 @@
-﻿namespace GrowSeeds.Views
+﻿using System.Diagnostics;
+using GrowSeeds.ViewModels;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace GrowSeeds.Views
 {
-    using ViewModels;
-    using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
+    
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
     {
@@ -10,6 +13,12 @@
         {
             InitializeComponent();
             BindingContext = new RegisterViewModel();
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            base.OnBackButtonPressed();
+            return true;
         }
     }
 }

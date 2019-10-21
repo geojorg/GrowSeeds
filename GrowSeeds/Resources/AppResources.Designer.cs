@@ -61,11 +61,65 @@ namespace GrowSeeds.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Accept.
+        /// </summary>
+        public static string Accept {
+            get {
+                return ResourceManager.GetString("Accept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I confirm that I am 18 years of age or older and that I agree with the .
+        /// </summary>
+        public static string AgeConfirmation {
+            get {
+                return ResourceManager.GetString("AgeConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you over 18 years old?.
+        /// </summary>
+        public static string AgeQst {
+            get {
+                return ResourceManager.GetString("AgeQst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coco.
+        /// </summary>
+        public static string Coco {
+            get {
+                return ResourceManager.GetString("Coco", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Compost.
+        /// </summary>
+        public static string Compost {
+            get {
+                return ResourceManager.GetString("Compost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create.
         /// </summary>
         public static string Create {
             get {
                 return ResourceManager.GetString("Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create New Seed.
+        /// </summary>
+        public static string CreateNew {
+            get {
+                return ResourceManager.GetString("CreateNew", resourceCulture);
             }
         }
         
@@ -79,6 +133,33 @@ namespace GrowSeeds.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string Date {
+            get {
+                return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done.
+        /// </summary>
+        public static string Done {
+            get {
+                return ResourceManager.GetString("Done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Flowering.
+        /// </summary>
+        public static string Flowering {
+            get {
+                return ResourceManager.GetString("Flowering", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forgot Password?.
         /// </summary>
         public static string ForgotPsw {
@@ -88,11 +169,65 @@ namespace GrowSeeds.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Germination.
+        /// </summary>
+        public static string Germination {
+            get {
+                return ResourceManager.GetString("Germination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hydro.
+        /// </summary>
+        public static string Hydro {
+            get {
+                return ResourceManager.GetString("Hydro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        public static string Information {
+            get {
+                return ResourceManager.GetString("Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to In order to use GrowSeeds it is important that you meet the minimum legal requirements of your region, so that you can see information related to cannabis..
+        /// </summary>
+        public static string LegalWarn {
+            get {
+                return ResourceManager.GetString("LegalWarn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log.
+        /// </summary>
+        public static string Log {
+            get {
+                return ResourceManager.GetString("Log", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium.
+        /// </summary>
+        public static string Medium {
+            get {
+                return ResourceManager.GetString("Medium", resourceCulture);
             }
         }
         
@@ -124,11 +259,29 @@ namespace GrowSeeds.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Privacy Policy..
+        /// </summary>
+        public static string Policy {
+            get {
+                return ResourceManager.GetString("Policy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
             get {
                 return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reject.
+        /// </summary>
+        public static string Reject {
+            get {
+                return ResourceManager.GetString("Reject", resourceCulture);
             }
         }
         
@@ -142,11 +295,83 @@ namespace GrowSeeds.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find your Strain....
+        /// </summary>
+        public static string SearchPlaceholder {
+            get {
+                return ResourceManager.GetString("SearchPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search for your specific cannabis strain to start using GrowSeeds.
+        /// </summary>
+        public static string SearchTxt {
+            get {
+                return ResourceManager.GetString("SearchTxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Seedling.
+        /// </summary>
+        public static string Seedling {
+            get {
+                return ResourceManager.GetString("Seedling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Password.
         /// </summary>
         public static string ShowPsw {
             get {
                 return ResourceManager.GetString("ShowPsw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Soil.
+        /// </summary>
+        public static string Soil {
+            get {
+                return ResourceManager.GetString("Soil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stage.
+        /// </summary>
+        public static string Stage {
+            get {
+                return ResourceManager.GetString("Stage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Strain Detail.
+        /// </summary>
+        public static string StrainDtl {
+            get {
+                return ResourceManager.GetString("StrainDtl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terms of use .
+        /// </summary>
+        public static string Terms {
+            get {
+                return ResourceManager.GetString("Terms", resourceCulture);
             }
         }
         
@@ -183,6 +408,15 @@ namespace GrowSeeds.Resources {
         public static string ValidPsw {
             get {
                 return ResourceManager.GetString("ValidPsw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vegetative.
+        /// </summary>
+        public static string Vegetative {
+            get {
+                return ResourceManager.GetString("Vegetative", resourceCulture);
             }
         }
     }

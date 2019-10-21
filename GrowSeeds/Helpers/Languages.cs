@@ -14,27 +14,27 @@ namespace GrowSeeds.Helpers
             DependencyService.Get<ILocalize>().SetLocale(ci);
         }
 
-        public static string Tittle { get { return AppResources.Tittle; } }
-
-        public static string Remember { get { return AppResources.Remember; } }
-
-        public static string Register { get { return AppResources.Register; } }
-
-        public static string Password { get { return AppResources.Password; } }
-
-        public static string Login { get { return AppResources.Login; } }
-
-        public static string ForgotPsw { get { return AppResources.ForgotPsw; } }
-
-        public static string ShowPsw { get { return AppResources.ShowPsw; } }
-
-        public static string ValidEmail { get { return AppResources.ValidEmail; } }
-
-        public static string ValidPsw { get { return AppResources.ValidPsw; } }
-
         public static string NewUser { get { return AppResources.NewUser; } }
 
         public static string Creatingsuccessful { get { return AppResources.Creatingsuccessful; } }
+
+        public static string Germination { get { return AppResources.Germination; } }
+
+        public static string Seedling { get { return AppResources.Seedling; } }
+
+        public static string Vegetative { get { return AppResources.Vegetative; } }
+
+        public static string Flowering { get { return AppResources.Flowering; } }
+
+        public static string Soil { get { return AppResources.Soil; } }
+
+        public static string Compost { get { return AppResources.Compost; } }
+
+        public static string Coco { get { return AppResources.Coco; } }
+
+        public static string Hydro { get { return AppResources.Hydro; } }
+
+
     }
 }
 

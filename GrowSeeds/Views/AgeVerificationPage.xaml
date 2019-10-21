@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
+             xmlns:i18n="clr-namespace:GrowSeeds.Helpers"
              xmlns:local="clr-namespace:GrowSeeds"
              x:DataType="viewModels:AgeVerificationViewModel"
              x:Class="GrowSeeds.Views.AgeVerificationPage"
@@ -15,29 +16,29 @@
     <ContentPage.Content>
         <ScrollView x:DataType="viewModels:AgeVerificationViewModel">
             <StackLayout
-                Padding="20,20,20,20">
+                Padding="20,20,20,20">  
 
-                <Label Text="GrowSeed"
+                <Label Text="GrowSeeds"
                     FontFamily="{StaticResource UbuntuBold}"
                     FontSize="Title"
                     TextColor="#333333"
                     Margin="90"
                     HorizontalOptions="CenterAndExpand"/>
-                <Label Text="¿Tienes más de 18 Años?"
+                <Label Text="{i18n:TranslateExtension AgeQst}"
                        FontFamily="{StaticResource UbuntuBold}"
                        FontSize="Body"
                        Margin="20"
                        HorizontalOptions="CenterAndExpand" />
-                <Label Text="Para poder utilizar GroWeed es importante que cumplas con los requisitos mínimos legales de tu región, de forma que puedas ver información relacionada con el cannabis."
+                <Label Text="{i18n:TranslateExtension LegalWarn}"
                        HorizontalOptions="CenterAndExpand"/>
                 <Label LineBreakMode="CharacterWrap">
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Text="Confirmo que tengo 18 años o más y que estoy de acuerdo con los "/>
-                            <local:HyperlinkSpan Text="Terminos de Uso "
+                            <Span Text="{i18n:TranslateExtension AgeConfirmation}"/>
+                            <local:HyperlinkSpan Text="{i18n:TranslateExtension Terms}"
                                                  Url="http://www.geojorgx.com/privacy-policy/" />
                             <Span Text="y la "/>
-                            <local:HyperlinkSpan Text="Política de Privacidad."
+                            <local:HyperlinkSpan Text="{i18n:TranslateExtension Policy}"
                                                  Url="http://www.geojorgx.com/privacy-policy/" />
                         </FormattedString>
                     </Label.FormattedText>
@@ -54,7 +55,7 @@
                     CornerRadius="15"
                     Grid.Row="0"
                     TextColor="White"
-                    Text="ACCEPT">
+                    Text="{i18n:TranslateExtension Accept}">
                     </Button>
 
                     <Button
@@ -63,7 +64,7 @@
                     CornerRadius="15"
                     Grid.Row="1"
                     TextColor="White"
-                    Text="REJECT">
+                    Text="{i18n:TranslateExtension Reject}">
                     </Button>
                 </Grid>
             </StackLayout>
