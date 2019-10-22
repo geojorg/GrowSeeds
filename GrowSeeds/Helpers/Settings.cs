@@ -1,7 +1,7 @@
 ﻿using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 
-namespace GrowSeeds.Utils
+namespace GrowSeeds.Helpers
 {
     public static class Settings
     {

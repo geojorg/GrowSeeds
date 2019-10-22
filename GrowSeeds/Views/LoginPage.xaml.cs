@@ -9,6 +9,7 @@
         public LoginPage()
         {
             InitializeComponent();
+            Shell.SetTabBarIsVisible(this, false);
             BindingContext = new LoginViewModel();
         }
     }

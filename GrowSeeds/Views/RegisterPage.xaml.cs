@@ -12,6 +12,7 @@ namespace GrowSeeds.Views
         public RegisterPage()
         {
             InitializeComponent();
+            Shell.SetTabBarIsVisible(this, false);
             BindingContext = new RegisterViewModel();
         }
 

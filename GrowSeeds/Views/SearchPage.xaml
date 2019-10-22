@@ -12,7 +12,7 @@
              x:Class="GrowSeeds.Views.SearchPage"
              Visual="Material"
              Title="{i18n:TranslateExtension Search}"
-             Shell.FlyoutBehavior="Disabled"
+             Shell.FlyoutBehavior="Flyout"
              Shell.BackgroundColor="#3c725b">
     
     <ContentPage.Content>

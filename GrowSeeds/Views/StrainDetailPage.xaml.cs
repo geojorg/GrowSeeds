@@ -9,6 +9,7 @@
         public StrainDetailPage()
         {
             InitializeComponent();
+            Shell.SetTabBarIsVisible(this, false);
             BindingContext = new StrainDetailViewModel();
         }
         async void Fade_Clicked(object sender, System.EventArgs e)

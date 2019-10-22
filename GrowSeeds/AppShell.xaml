@@ -32,47 +32,55 @@
     </Shell.Resources>
 
     <!--Pages and Routes-->
-    
-    <ShellItem Route="AgeVerification">
-        <ShellSection>
-            <ShellContent>
-                <local:AgeVerificationPage/>
-            </ShellContent>
-        </ShellSection>
-    </ShellItem>
-    <ShellItem Route="Login">
-        <ShellSection>
-            <ShellContent>
-                <local:LoginPage/>
-            </ShellContent>
-        </ShellSection>
-    </ShellItem>
-    <ShellItem Route="Register">
-        <ShellSection>
-            <ShellContent>
-                <local:RegisterPage/>
-            </ShellContent>
-        </ShellSection>
-    </ShellItem>
-    <ShellItem 
-        Route="Detail"
+
+    <TabBar>
+        <ShellContent Route="AgeVerification">
+            <local:AgeVerificationPage/>
+        </ShellContent>
+        <ShellContent Route="Login">
+            <local:LoginPage/>
+        </ShellContent>
+        <ShellContent Route="Register">
+            <local:RegisterPage/>
+        </ShellContent>
+        <ShellContent Route="Detail"
+                      Style="{StaticResource AppShell}">
+            <local:RegisterPage/>
+        </ShellContent>
+    </TabBar>
+   
+    <!--<ShellItem 
+        Route="About"
         Style="{StaticResource AppShell}">
         <ShellSection>
             <ShellContent>
-                <local:StrainDetailPage/>
+                <local:AboutPage/>
             </ShellContent>
         </ShellSection>
-    </ShellItem>
+    </ShellItem>-->
 
-    <FlyoutItem>
-        
-    </FlyoutItem>
+    <!--<FlyoutItem
+        FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="About"
+             Route="About">
+        </Tab>
+    </FlyoutItem>-->
+
+    <ShellContent Route="About"
+                  
+                  Title="About"
+                  ContentTemplate="{DataTemplate local:AboutPage}" />
+
     
     
-    <TabBar Route="AppPage"
-            Shell.BackgroundColor="white"
-            Shell.TabBarUnselectedColor="DimGray"
-            Shell.TabBarTitleColor="#3c725b">
+    
+    
+    
+    <TabBar 
+        Route="AppPage"
+        Shell.BackgroundColor="white"
+        Shell.TabBarUnselectedColor="DimGray"
+        Shell.TabBarTitleColor="#3c725b">
         <Tab Title="{i18n:TranslateExtension Search}" 
              Icon="ic_search">
             <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" 
@@ -89,6 +97,4 @@
                           Route="LogTab"/>
         </Tab>
     </TabBar>
-
-
 </Shell>
