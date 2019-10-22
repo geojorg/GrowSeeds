@@ -1,34 +1,36 @@
-﻿namespace GrowSeeds
+﻿using GrowSeeds.Helpers;
+using Xamarin.Forms;
+
+namespace GrowSeeds
 {
-    using Utils;
-    using Xamarin.Forms;
+
     public partial class App : Application
     {
 
-        public string IsFirstTime
-        {
-            get { return Settings.GeneralSettings; }
-            set
-            {
-                if (Settings.GeneralSettings == value)
-                    return;
-                Settings.GeneralSettings = value;
-            }
-        }
+        //public string IsFirstTime
+        //{
+        //    get { return Settings.GeneralSettings; }
+        //    set
+        //    {
+        //        if (Settings.GeneralSettings == value)
+        //            return;
+        //        Settings.GeneralSettings = value;
+        //    }
+        //}
 
         public App()
         {
-            InitializeComponent();
-            if (IsFirstTime == "Yes")
-            {
-                IsFirstTime = "No";
-                MainPage = new AppShell();
-            }
-            else
-            {
+            //InitializeComponent();
+            //if (IsFirstTime == "Yes")
+            //{
+            //    IsFirstTime = "No";
+            //    MainPage = new AppShell();
+            //}
+            //else
+            //{
                 MainPage = new AppShell();
                 Shell.Current.GoToAsync("//Login");
-            }
+            //}
         }
 
         protected override void OnStart()
