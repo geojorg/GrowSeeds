@@ -21,6 +21,9 @@ namespace GrowSeeds
         public App()
         {
             InitializeComponent();
+
+            Xamarin.Essentials.VersionTracking.Track();
+
             if (IsFirstTime == "Yes")
             {
                 IsFirstTime = "No";

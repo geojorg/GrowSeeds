@@ -4,12 +4,80 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="GrowSeeds.Views.AboutPage">
+             xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
+             xmlns:i18n="clr-namespace:GrowSeeds.Helpers"
+             x:Class="GrowSeeds.Views.AboutPage"
+             Visual="Material"
+             Title="{i18n:TranslateExtension About}">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Programa realizado por Jorge Guerrero"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid x:DataType="viewModels:AboutViewModel"
+            VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Image
+            Aspect="Fill"
+            Grid.Row="0"
+            HeightRequest="270"
+            VerticalOptions="StartAndExpand"
+            Source="Overlay.png"/>
+            <StackLayout
+                Orientation="Vertical"
+                Margin="0.20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    FontFamily="{StaticResource UbuntuBold}"
+                    FontSize="34"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="GrowSeeds"
+                    TextColor="White"/>
+                <Label 
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Text="{i18n:TranslateExtension Tittle}" 
+                    TextColor="White"/>
+                <Label 
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    Text="{Binding AppVersion}" 
+                    TextColor="White"/>
+                <Label 
+                    FontSize="14"
+                    HorizontalOptions="Center"
+                    Text="{Binding BuildNumber}" 
+                    TextColor="White"/>
+            </StackLayout>
+            <Label
+                FontSize="18"
+                Grid.Row="1"
+                Padding="50,30,50,0"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                Text="{i18n:TranslateExtension AboutTxt}">
+            </Label>
+            <StackLayout
+                Grid.Row="2"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand">
+                <Label
+                HorizontalOptions="Center"
+                FontFamily="{StaticResource UbuntuBold}"
+                FontSize="14"
+                Text="GitHub">
+                </Label>
+                <StackLayout
+                    Orientation="Vertical">
+                    <ImageButton
+                    Source="GitHub"
+                    BackgroundColor="Transparent"
+                    Command="{Binding GitCommand}">
+                    </ImageButton>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
+
 </ContentPage>

@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:controls="clr-namespace:GrowSeeds.Controls"
              xmlns:local="clr-namespace:GrowSeeds.Views"
              xmlns:i18n="clr-namespace:GrowSeeds.Helpers"
              Visual="Material"
@@ -33,68 +34,70 @@
 
     <!--Pages and Routes-->
 
+    <Shell.FlyoutHeader>
+        <controls:GrowSeedsHeader />
+    </Shell.FlyoutHeader>
+
     <TabBar>
-        <ShellContent Route="AgeVerification">
+        <ShellContent 
+            Route="AgeVerification">
             <local:AgeVerificationPage/>
         </ShellContent>
-        <ShellContent Route="Login">
+        <ShellContent 
+            Route="Login">
             <local:LoginPage/>
         </ShellContent>
-        <ShellContent Route="Register">
+        <ShellContent 
+            Route="Register">
             <local:RegisterPage/>
         </ShellContent>
-        <ShellContent Route="Detail"
-                      Style="{StaticResource AppShell}">
-            <local:RegisterPage/>
+        <ShellContent 
+            Route="Detail"
+            Style="{StaticResource AppShell}">
+            <local:StrainDetailPage/>
         </ShellContent>
     </TabBar>
-   
-    <!--<ShellItem 
-        Route="About"
-        Style="{StaticResource AppShell}">
-        <ShellSection>
-            <ShellContent>
-                <local:AboutPage/>
-            </ShellContent>
-        </ShellSection>
-    </ShellItem>-->
 
-    <!--<FlyoutItem
-        FlyoutDisplayOptions="AsMultipleItems">
-        <Tab Title="About"
-             Route="About">
-        </Tab>
-    </FlyoutItem>-->
-
-    <ShellContent Route="About"
-                  
-                  Title="About"
-                  ContentTemplate="{DataTemplate local:AboutPage}" />
-
-    
-    
-    
-    
-    
-    <TabBar 
+    <FlyoutItem
+        FlyoutDisplayOptions="AsMultipleItems"
         Route="AppPage"
-        Shell.BackgroundColor="white"
+        Shell.BackgroundColor="White"
         Shell.TabBarUnselectedColor="DimGray"
         Shell.TabBarTitleColor="#3c725b">
-        <Tab Title="{i18n:TranslateExtension Search}" 
-             Icon="ic_search">
-            <ShellContent ContentTemplate="{DataTemplate local:SearchPage}" 
-                          Route="SearchTab"/>
-        </Tab>
-        <Tab Title="{i18n:TranslateExtension Information}" 
-             Icon="ic_info">
-            <ShellContent ContentTemplate="{DataTemplate local:InformationPage}" 
-                          Route="InfoTab"/>
-        </Tab>
-        <Tab Title="{i18n:TranslateExtension Log}" 
-             Icon="ic_log.png">
-            <ShellContent ContentTemplate="{DataTemplate local:LogPage}" 
-                          Route="LogTab"/>
-        </Tab>
-    </TabBar>
+        <ShellContent
+            ContentTemplate="{DataTemplate local:SearchPage}"
+            Icon="ic_search"
+            Route="SearchTab"
+            Title="{i18n:TranslateExtension Search}">
+        </ShellContent>
+        
+        <ShellContent
+            ContentTemplate="{DataTemplate local:PlantsPage}"
+            Icon="ic_plant"
+            Route="PlantsTab"
+            Title="{i18n:TranslateExtension Plants}">
+        </ShellContent>
+
+        <ShellContent
+            ContentTemplate="{DataTemplate local:LogPage}"
+            Icon="ic_log"
+            Route="LogTab"
+            Title="{i18n:TranslateExtension Log}">
+        </ShellContent>
+    </FlyoutItem>
+
+    <ShellContent 
+        ContentTemplate="{DataTemplate local:AboutPage}"
+        Icon="ic_info"
+        Route="About"
+        Style="{StaticResource AppShell}"
+        Title="{i18n:TranslateExtension About}">
+    </ShellContent>
+    
+    <MenuItem
+        Text="{i18n:TranslateExtension LogOut}"
+        IconImageSource="ic_logout"
+        Command="{Binding RandomPageCommand}">
+    </MenuItem>
+
 </Shell>

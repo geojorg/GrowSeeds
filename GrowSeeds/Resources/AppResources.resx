@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutTxt" xml:space="preserve">
+    <value>Thank you for your love on GrowSeeds, for Feedback follow us on:</value>
+  </data>
   <data name="Accept" xml:space="preserve">
     <value>Accept</value>
   </data>
@@ -171,6 +177,12 @@
   <data name="Login" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Log Out</value>
+  </data>
+  <data name="LogPage" xml:space="preserve">
+    <value>Log Page</value>
+  </data>
   <data name="Medium" xml:space="preserve">
     <value>Medium</value>
   </data>
@@ -182,6 +194,12 @@
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="Plants" xml:space="preserve">
+    <value>Plants</value>
+  </data>
+  <data name="PlantsPage" xml:space="preserve">
+    <value>Lists of Plants</value>
   </data>
   <data name="Policy" xml:space="preserve">
     <value>Privacy Policy.</value>

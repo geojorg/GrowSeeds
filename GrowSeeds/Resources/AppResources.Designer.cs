@@ -61,6 +61,24 @@ namespace GrowSeeds.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for your love on GrowSeeds, for Feedback follow us on:.
+        /// </summary>
+        public static string AboutTxt {
+            get {
+                return ResourceManager.GetString("AboutTxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Accept.
         /// </summary>
         public static string Accept {
@@ -223,6 +241,24 @@ namespace GrowSeeds.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log Out.
+        /// </summary>
+        public static string LogOut {
+            get {
+                return ResourceManager.GetString("LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log Page.
+        /// </summary>
+        public static string LogPage {
+            get {
+                return ResourceManager.GetString("LogPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Medium.
         /// </summary>
         public static string Medium {
@@ -255,6 +291,24 @@ namespace GrowSeeds.Resources {
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Plants.
+        /// </summary>
+        public static string Plants {
+            get {
+                return ResourceManager.GetString("Plants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lists of Plants.
+        /// </summary>
+        public static string PlantsPage {
+            get {
+                return ResourceManager.GetString("PlantsPage", resourceCulture);
             }
         }
         

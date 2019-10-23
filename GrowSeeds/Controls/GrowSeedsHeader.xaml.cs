@@ -1,12 +1,12 @@
 ﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace GrowSeeds.Views
+namespace GrowSeeds.Controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class StrainSearchItemView : ContentView
+    public partial class GrowSeedsHeader : ContentView
     {
-        public StrainSearchItemView()
+        public GrowSeedsHeader()
         {
             InitializeComponent();
         }

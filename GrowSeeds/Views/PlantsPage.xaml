@@ -5,18 +5,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
-             xmlns:views="clr-namespace:GrowSeeds.Views"
-             x:DataType="viewModels:InformationViewModel"
-             x:Class="GrowSeeds.Views.InformationPage"
+             xmlns:i18n="clr-namespace:GrowSeeds.Helpers"
+             x:Class="GrowSeeds.Views.PlantsPage"
              Visual="Material"
-             Title="Seeds Information"
+             Title="{i18n:TranslateExtension PlantsPage}"
+             Shell.FlyoutBehavior="Flyout"
              Shell.BackgroundColor="#3c725b">
-
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                Text="Test para ver si funciona">
-            </Label>
+            <Label Text="PAGINA PARA EL LISTADO DE LAS PLANTAS"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

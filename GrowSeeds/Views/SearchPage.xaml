@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:controls="clr-namespace:GrowSeeds.Control"
+             xmlns:controls="clr-namespace:GrowSeeds.Controls"
              xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
              xmlns:i18n="clr-namespace:GrowSeeds.Helpers"
              xmlns:views="clr-namespace:GrowSeeds.Views"
@@ -30,6 +30,7 @@
             <Label              
                 FontSize="Medium"
                 HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
                 Margin="20"
                 Text="{i18n:TranslateExtension SearchTxt}"
                 VerticalOptions="StartAndExpand"/>

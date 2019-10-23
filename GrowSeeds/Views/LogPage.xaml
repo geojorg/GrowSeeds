@@ -4,10 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:viewModels="clr-namespace:GrowSeeds.ViewModels"
+             xmlns:i18n="clr-namespace:GrowSeeds.Helpers"
              x:Class="GrowSeeds.Views.LogPage"
              Visual="Material"
-             Title="Log of Seeds"
+             Title="{i18n:TranslateExtension LogPage}"
+             Shell.FlyoutBehavior="Flyout"
              Shell.BackgroundColor="#3c725b">
+    
+    
+    
     <ContentPage.Content>
         <StackLayout>
             <Label Text="PAGINA PARA EL LOG DE LA SEMILLA"

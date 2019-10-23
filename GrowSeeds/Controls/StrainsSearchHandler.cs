@@ -1,12 +1,12 @@
-﻿namespace GrowSeeds.Control
-{
-    using Models;
-    using System;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using ViewModels;
-    using Xamarin.Forms;
+﻿using GrowSeeds.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
+using GrowSeeds.ViewModels;
+using Xamarin.Forms;
 
+namespace GrowSeeds.Controls
+{
     public class StrainsSearchHandler : SearchHandler
     {
         #region Properties

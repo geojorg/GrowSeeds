@@ -5,13 +5,13 @@ using Xamarin.Forms.Xaml;
 namespace GrowSeeds.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LogPage : ContentPage
+    public partial class PlantsPage : ContentPage
     {
-        public LogPage()
+        public PlantsPage()
         {
             InitializeComponent();
             Shell.SetTabBarIsVisible(this, true);
-            BindingContext = new LogViewModel();
+            BindingContext = new PlantsViewModel();
         }
     }
 }

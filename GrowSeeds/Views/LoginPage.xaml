@@ -9,7 +9,6 @@
              x:DataType="viewModels:LoginViewModel"
              x:Class="GrowSeeds.Views.LoginPage"
              Shell.NavBarIsVisible="False"
-             
              Shell.FlyoutBehavior="Disabled"
              Visual="Material"
              BackgroundImageSource="Welcome">

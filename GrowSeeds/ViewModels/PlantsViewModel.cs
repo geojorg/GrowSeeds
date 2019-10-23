@@ -1,14 +1,12 @@
 ﻿namespace GrowSeeds.ViewModels
 {
-    public class InformationViewModel : BaseViewModel
+    public class PlantsViewModel : BaseViewModel
     {
         #region Properties
         #endregion
 
         #region Constructor
-        public InformationViewModel()
-        {
-        }
+        
         #endregion
     }
 }
