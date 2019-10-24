@@ -10,7 +10,7 @@ namespace GrowSeeds.Views
         public PlantsPage()
         {
             InitializeComponent();
-            Shell.SetTabBarIsVisible(this, true);
+            
             BindingContext = new PlantsViewModel();
         }
     }

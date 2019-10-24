@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
 using GrowSeeds.Helpers;
+using GrowSeeds.Views;
 
 namespace GrowSeeds.ViewModels
 {
@@ -31,6 +32,10 @@ namespace GrowSeeds.ViewModels
         #region Contructor
         public StrainDetailViewModel()
         {
+            Plant = new Plant
+            {
+            };
+
             IsVisible = false;
             EmptyFields = "Transparent";
 
@@ -55,6 +60,8 @@ namespace GrowSeeds.ViewModels
                 Stage = Languages.Flowering,
                 Medium = Languages.Hydro
             });
+
+
         }
 
         public string SeedStrains
@@ -149,6 +156,8 @@ namespace GrowSeeds.ViewModels
             get { return emptyfields; }
             set { SetProperty(ref emptyfields, value); }
         }
+
+        public Plant Plant { get; set; }
         #endregion
 
         #region Command
@@ -192,8 +201,8 @@ namespace GrowSeeds.ViewModels
             }
             else
             {
-                Shell.Current.GoToAsync("//InfoTab");
-                MessagingCenter.Send(PlantName, "AddItem");
+                MessagingCenter.Send("AddItem", "argu");
+                Shell.Current.GoToAsync("//PlantsTab");
                 PlantName = string.Empty;
                 StageSelected = null;
                 MediumSelected = null;
@@ -204,5 +213,4 @@ namespace GrowSeeds.ViewModels
         }
         #endregion
     }
-
 }

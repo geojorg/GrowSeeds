@@ -13,10 +13,15 @@
              Shell.BackgroundColor="#3c725b">
     
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="PAGINA PARA EL LISTADO DE LAS PLANTAS"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout x:DataType="viewModels:PlantsViewModel">
+            <ListView
+                ItemsSource="{Binding Plants}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -40,8 +40,8 @@ namespace GrowSeeds.ViewModels
         #region Constructor 
         public SearchViewModel()
         {
-            this.IsLoading = true;
-            this.IsVisible = SearchBoxVisibility.Hidden;
+            IsLoading = true;
+            IsVisible = SearchBoxVisibility.Hidden;
             _restService = new RestService();
             RestService.ConectivityStatus();
             LoadPageEvent();
@@ -53,8 +53,8 @@ namespace GrowSeeds.ViewModels
         {
             var response = await _restService.GetStrainsDataAsync(strainSourceData);
             NameofStrains = new List<WeedStrain>(response.WeedStrains.ToList());
-            this.IsLoading = false;
-            this.IsVisible = SearchBoxVisibility.Collapsible;
+            IsLoading = false;
+            IsVisible = SearchBoxVisibility.Collapsible;
         }
         #endregion
     }

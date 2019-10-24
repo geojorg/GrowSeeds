@@ -23,10 +23,10 @@ namespace GrowSeeds.ViewModels
         #region Constructor
         public RegisterViewModel()
         {
-            this.NameEmpty = "Transparent";
-            this.EmailEmpty = "Transparent";
-            this.PasswordEmpty = "Transparent";
-            this.Picture = "UserGeneric.png";
+            NameEmpty = "Transparent";
+            EmailEmpty = "Transparent";
+            PasswordEmpty = "Transparent";
+            Picture = "UserGeneric.png";
             Name = string.Empty;
             Email = string.Empty;
             Password = string.Empty;
@@ -48,7 +48,6 @@ namespace GrowSeeds.ViewModels
 
         private async void Register()
         {
-
             var validname = IsValidName();
             var validemail = IsValidEmail(Email);
             var validpassword = IsValidPassword();
