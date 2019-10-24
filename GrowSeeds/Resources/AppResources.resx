@@ -153,6 +153,9 @@
   <data name="Done" xml:space="preserve">
     <value>Done</value>
   </data>
+  <data name="EmptyFields" xml:space="preserve">
+    <value>Please fill al required fields</value>
+  </data>
   <data name="Flowering" xml:space="preserve">
     <value>Flowering</value>
   </data>

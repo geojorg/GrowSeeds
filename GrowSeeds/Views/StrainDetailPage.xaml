@@ -26,6 +26,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Image
             Aspect="Fill"
@@ -157,9 +158,15 @@
                 Margin="20,5,20,0"
                 Text="{i18n:TranslateExtension CreateNew}"
                 VerticalOptions="StartAndExpand"/>
+            <Label
+                Grid.Row="3"
+                TextColor="{Binding EmptyFields, Mode=TwoWay}"
+                Text="{i18n:TranslateExtension EmptyFields}"
+                HorizontalOptions="Center">
+            </Label>
             <Frame
                 CornerRadius="10"
-                Grid.Row="3"
+                Grid.Row="4"
                 IsVisible="{Binding IsVisible}">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -181,7 +188,7 @@
                         Text="{Binding PlantName, Mode=TwoWay}"
                         VerticalOptions="Center">
                     </Entry>
-                        <Label
+                    <Label
                         Grid.Column="0"
                         Grid.Row="1"
                         FontSize="Body"
@@ -229,7 +236,7 @@
                 Command="{Binding SaveCommand}"
                 Clicked="FadeOut_Clicked"
                 CornerRadius="12"
-                Grid.Row="4"
+                Grid.Row="5"
                 IsVisible="{Binding IsVisible}"
                 Text="{i18n:TranslateExtension Done}"
                 Margin="20,0,20,15"

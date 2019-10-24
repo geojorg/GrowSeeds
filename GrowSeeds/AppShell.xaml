@@ -97,7 +97,7 @@
     <MenuItem
         Text="{i18n:TranslateExtension LogOut}"
         IconImageSource="ic_logout"
-        Command="{Binding RandomPageCommand}">
+        Command="{Binding LogoutCommand}">
     </MenuItem>
 
 </Shell>

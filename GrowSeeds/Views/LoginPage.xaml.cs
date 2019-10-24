@@ -1,8 +1,10 @@
-﻿namespace GrowSeeds.Views
+﻿using GrowSeeds.ViewModels;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace GrowSeeds.Views
 {
-    using ViewModels;
-    using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
+   
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
@@ -12,5 +14,6 @@
             Shell.SetTabBarIsVisible(this, false);
             BindingContext = new LoginViewModel();
         }
+
     }
 }

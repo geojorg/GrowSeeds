@@ -24,13 +24,15 @@ namespace GrowSeeds.ViewModels
         private object stageSelected;
         private object mediumSelected;
         private object dateSelected;
+        private string emptyfields;
 
         #endregion
 
         #region Contructor
         public StrainDetailViewModel()
         {
-            this.IsVisible = false;
+            IsVisible = false;
+            EmptyFields = "Transparent";
 
             Stages = new List<StageInfo>();
             Stages.Add(new StageInfo
@@ -63,13 +65,13 @@ namespace GrowSeeds.ViewModels
                 WeedStrain strain = SearchViewModel.NameofStrains[id];
                 if (strain != null)
                 {
-                    this.Name = strain.Name;
-                    this.Rating = strain.Rating;
-                    this.Type = strain.Type;
-                    this.Effects = strain.Effects;
-                    this.Flavor = strain.Flavor;
-                    this.Thc = strain.Thc;
-                    this.Cbd = strain.Cbd;
+                    Name = strain.Name;
+                    Rating = strain.Rating;
+                    Type = strain.Type;
+                    Effects = strain.Effects;
+                    Flavor = strain.Flavor;
+                    Thc = strain.Thc;
+                    Cbd = strain.Cbd;
                 }
             }
         }
@@ -78,43 +80,43 @@ namespace GrowSeeds.ViewModels
         #region Properties
         public string Name
         {
-            get { return this.name; }
-            set { SetProperty(ref this.name, value); }
+            get { return name; }
+            set { SetProperty(ref name, value); }
         }
         public long Rating
         {
-            get { return this.rating; }
-            set { SetProperty(ref this.rating, value); }
+            get { return rating; }
+            set { SetProperty(ref rating, value); }
         }
         public TypeEnum Type
         {
-            get { return this.type; }
-            set { SetProperty(ref this.type, value); }
+            get { return type; }
+            set { SetProperty(ref type, value); }
         }
         public string Effects
         {
-            get { return this.effects; }
-            set { SetProperty(ref this.effects, value); }
+            get { return effects; }
+            set { SetProperty(ref effects, value); }
         }
         public string Flavor
         {
-            get { return this.flavor; }
-            set { SetProperty(ref this.flavor, value); }
+            get { return flavor; }
+            set { SetProperty(ref flavor, value); }
         }
         public long Thc
         {
-            get { return this.thc; }
-            set { SetProperty(ref this.thc, value); }
+            get { return thc; }
+            set { SetProperty(ref thc, value); }
         }
         public long Cbd
         {
-            get { return this.cbd; }
-            set { SetProperty(ref this.cbd, value); }
+            get { return cbd; }
+            set { SetProperty(ref cbd, value); }
         }
         public bool IsVisible
         {
-            get { return this.isVisible; }
-            set { SetProperty(ref this.isVisible, value); }
+            get { return isVisible; }
+            set { SetProperty(ref isVisible, value); }
         }
         public IList<StageInfo> Stages
         {
@@ -123,24 +125,29 @@ namespace GrowSeeds.ViewModels
         }
         public string PlantName
         {
-            get { return this.plantName; }
-            set { SetProperty(ref this.plantName, value); }
+            get { return plantName; }
+            set { SetProperty(ref plantName, value); }
         }
 
         public object StageSelected
         {
-            get { return this.stageSelected; }
-            set { SetProperty(ref this.stageSelected, value); }
+            get { return stageSelected; }
+            set { SetProperty(ref stageSelected, value); }
         }
         public object MediumSelected
         {
-            get { return this.mediumSelected; }
-            set { SetProperty(ref this.mediumSelected, value); }
+            get { return mediumSelected; }
+            set { SetProperty(ref mediumSelected, value); }
         }
         public object DateSelected
         {
-            get { return this.dateSelected; }
-            set { SetProperty(ref this.dateSelected, value); }
+            get { return dateSelected; }
+            set { SetProperty(ref dateSelected, value); }
+        }
+        public string EmptyFields
+        {
+            get { return emptyfields; }
+            set { SetProperty(ref emptyfields, value); }
         }
         #endregion
 
@@ -179,14 +186,21 @@ namespace GrowSeeds.ViewModels
 
         private void Save()
         {
-            Shell.Current.GoToAsync("//InfoTab");
-            MessagingCenter.Send(PlantName, "AddItem");
-            this.PlantName = string.Empty;
-            this.StageSelected = null;
-            this.MediumSelected = null;
-            this.DateSelected = System.DateTime.Now;
-            this.IsVisible = false;
-
+            if (string.IsNullOrEmpty(PlantName) || (StageSelected==null) || (MediumSelected==null) )
+            {
+                EmptyFields = "Red";
+            }
+            else
+            {
+                Shell.Current.GoToAsync("//InfoTab");
+                MessagingCenter.Send(PlantName, "AddItem");
+                PlantName = string.Empty;
+                StageSelected = null;
+                MediumSelected = null;
+                DateSelected = System.DateTime.Now;
+                IsVisible = false;
+                EmptyFields = "Transparent";
+            }
         }
         #endregion
     }

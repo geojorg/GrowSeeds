@@ -169,6 +169,15 @@ namespace GrowSeeds.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please fill al required fields.
+        /// </summary>
+        public static string EmptyFields {
+            get {
+                return ResourceManager.GetString("EmptyFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Flowering.
         /// </summary>
         public static string Flowering {

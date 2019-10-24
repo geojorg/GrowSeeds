@@ -41,25 +41,27 @@ namespace GrowSeeds.ViewModels
             {
                 if (string.IsNullOrEmpty(this.Email) && string.IsNullOrEmpty(this.Password))
                 {
-                    this.EmailEmpty = "Red";
-                    this.PasswordEmpty = "Red";
+                    EmailEmpty = "Red";
+                    PasswordEmpty = "Red";
                     return;
                 }
                 else if (string.IsNullOrEmpty(this.Email))
                 {
-                    this.EmailEmpty = "Red";
-                    this.PasswordEmpty = "Transparent";
+                    EmailEmpty = "Red";
+                    PasswordEmpty = "Transparent";
                 }
                 else if (string.IsNullOrEmpty(this.Password))
                 {
-                    this.EmailEmpty = "Transparent";
-                    this.PasswordEmpty = "Red";
+                    EmailEmpty = "Transparent";
+                    PasswordEmpty = "Red";
                 }
                 else
                 {
-                    this.EmailEmpty = "Transparent";
-                    this.PasswordEmpty = "Transparent";
+                    EmailEmpty = "Transparent";
+                    PasswordEmpty = "Transparent";
                     Shell.Current.GoToAsync("//AppPage");
+                    Password = string.Empty;
+                    Email = string.Empty;
                 }
             }
             else
