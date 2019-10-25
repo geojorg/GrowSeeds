@@ -165,6 +165,9 @@
   <data name="Germination" xml:space="preserve">
     <value>Germinación</value>
   </data>
+  <data name="Hybrid" xml:space="preserve">
+    <value>Hibrida</value>
+  </data>
   <data name="Hydro" xml:space="preserve">
     <value>Hidroponía</value>
   </data>

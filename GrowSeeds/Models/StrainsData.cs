@@ -1,10 +1,10 @@
-﻿namespace GrowSeeds.Models
-{
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
-    using System;
-    using System.Globalization;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
+using System.Globalization;
 
+namespace GrowSeeds.Models
+{
     public partial class StrainsData
     {
         [JsonProperty("WeedStrains")]

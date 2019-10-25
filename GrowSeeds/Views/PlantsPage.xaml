@@ -14,8 +14,7 @@
     
     <ContentPage.Content>
         <StackLayout x:DataType="viewModels:PlantsViewModel">
-            <ListView
-                ItemsSource="{Binding Plants}">
+            <ListView>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         

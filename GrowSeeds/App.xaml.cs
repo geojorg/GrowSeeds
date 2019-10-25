@@ -1,11 +1,16 @@
-﻿using GrowSeeds.Helpers;
+﻿using GrowSeeds.Data;
+using GrowSeeds.Helpers;
+using System;
+using System.IO;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace GrowSeeds
 {
-
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class App : Application
     {
+        static GrowSeedsDB database;
 
         public string IsFirstTime
         {
@@ -17,7 +22,6 @@ namespace GrowSeeds
                 Settings.GeneralSettings = value;
             }
         }
-
         public App()
         {
             InitializeComponent();
@@ -33,6 +37,18 @@ namespace GrowSeeds
             {
                 MainPage = new AppShell();
                 Shell.Current.GoToAsync("//Login");
+            }
+        }
+        public static GrowSeedsDB Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new GrowSeedsDB(
+                      Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "GrowSeedsSQLite.db3"));
+                }
+                return database;
             }
         }
 

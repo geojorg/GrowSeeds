@@ -18,11 +18,14 @@ namespace GrowSeeds.ViewModels
         #region Constructor
         public LoginViewModel()
         {
-            this.EmailEmpty = "Transparent";
-            this.PasswordEmpty = "Transparent";
-            this.IsRemembered = true;
-            this.Email = string.Empty;
-            this.Password = string.Empty;
+            EmailEmpty = "Transparent";
+            PasswordEmpty = "Transparent";
+            IsRemembered = true;
+            Email = "geojorg@gmail.com";
+            Password = "123456";
+            //TODO ACTIVAR ESTO
+            //Email = string.Empty;
+            //Password = string.Empty;
         }
         #endregion
 

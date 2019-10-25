@@ -34,7 +34,7 @@ namespace GrowSeeds.Helpers
 
         public static string Hydro { get { return AppResources.Hydro; } }
 
-
+        public static string Hybrid { get { return AppResources.Hybrid; } }
     }
 }
 

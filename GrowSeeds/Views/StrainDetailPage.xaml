@@ -43,12 +43,12 @@
                     FontFamily="{StaticResource UbuntuBold}"
                     FontSize="34"
                     HorizontalOptions="CenterAndExpand"
-                    Text="{Binding Name}"
+                    Text="{Binding PlantStrain}"
                     TextColor="White"/>
                 <Label 
                     FontSize="20"
                     HorizontalOptions="Center"
-                    Text="{Binding Type}" 
+                    Text="{Binding PlantType}" 
                     TextColor="White"/>
                 <Label 
                     FontSize="14"
@@ -195,8 +195,8 @@
                         Text="{i18n:TranslateExtension Stage}"
                         VerticalOptions="Center"/>
                     <Picker
-                        ItemsSource="{Binding Stages}"
-                        ItemDisplayBinding="{Binding Stage}"
+                        ItemsSource="{Binding ListStages}"
+                        ItemDisplayBinding="{Binding Item}"
                         BackgroundColor="Transparent"
                         Grid.Column="1"
                         Grid.Row="1"
@@ -210,7 +210,7 @@
                         VerticalOptions="Center"/>
                     <DatePicker
                         BackgroundColor="Transparent"
-                        Date="{Binding DateSelected, Mode=TwoWay}"
+                        Date="{Binding PlantDate, Mode=TwoWay}"
                         Format="dd/MM/yyyy"
                         Grid.Column="1"
                         Grid.Row="2"
@@ -222,8 +222,8 @@
                         Text="{i18n:TranslateExtension Medium}"
                         VerticalOptions="Center"/>
                     <Picker
-                        ItemsSource="{Binding Stages}"
-                        ItemDisplayBinding="{Binding Medium}"
+                        ItemsSource="{Binding ListMediums}"
+                        ItemDisplayBinding="{Binding Item}"
                         BackgroundColor="Transparent"
                         Grid.Column="1"
                         Grid.Row="3"

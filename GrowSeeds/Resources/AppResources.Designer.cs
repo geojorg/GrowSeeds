@@ -205,6 +205,15 @@ namespace GrowSeeds.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hybrid.
+        /// </summary>
+        public static string Hybrid {
+            get {
+                return ResourceManager.GetString("Hybrid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hydro.
         /// </summary>
         public static string Hydro {

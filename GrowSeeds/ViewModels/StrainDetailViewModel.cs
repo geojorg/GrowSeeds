@@ -1,11 +1,10 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using GrowSeeds.Controls;
 using GrowSeeds.Models;
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;
 using Xamarin.Forms;
-using GrowSeeds.Helpers;
-using GrowSeeds.Views;
 
 namespace GrowSeeds.ViewModels
 {
@@ -13,57 +12,34 @@ namespace GrowSeeds.ViewModels
     public class StrainDetailViewModel : BaseViewModel
     {
         #region Attributes
-        private string name;
+        private string plantStrain;
         private long rating;
-        private TypeEnum type;
+        private TypeEnum plantType;
         private string effects;
         private string flavor;
         private long thc;
         private long cbd;
         private bool isVisible;
         private string plantName;
-        private object stageSelected;
-        private object mediumSelected;
-        private object dateSelected;
+        private Stage stageSelected;
+        private string plantStage;
+        private Medium mediumSelected;
+        private string plantMedium;
         private string emptyfields;
+        private DateTime plantDate;
 
         #endregion
 
         #region Contructor
         public StrainDetailViewModel()
         {
-            Plant = new Plant
-            {
-            };
-
             IsVisible = false;
+            PlantDate = System.DateTime.Now;
             EmptyFields = "Transparent";
-
-            Stages = new List<StageInfo>();
-            Stages.Add(new StageInfo
-            {
-                Stage = Languages.Germination,
-                Medium = Languages.Soil
-            });
-            Stages.Add(new StageInfo
-            {
-                Stage = Languages.Seedling,
-                Medium = Languages.Compost
-            });
-            Stages.Add(new StageInfo
-            {
-                Stage = Languages.Vegetative,
-                Medium = Languages.Coco
-            });
-            Stages.Add(new StageInfo
-            {
-                Stage = Languages.Flowering,
-                Medium = Languages.Hydro
-            });
-
-
+            ListStages = StagePicker.GetStages();
+            ListMediums = MediumPicker.GetMediums();
         }
-
+      
         public string SeedStrains
         {
             set
@@ -72,9 +48,9 @@ namespace GrowSeeds.ViewModels
                 WeedStrain strain = SearchViewModel.NameofStrains[id];
                 if (strain != null)
                 {
-                    Name = strain.Name;
+                    PlantStrain = strain.Name;
                     Rating = strain.Rating;
-                    Type = strain.Type;
+                    PlantType = strain.Type;
                     Effects = strain.Effects;
                     Flavor = strain.Flavor;
                     Thc = strain.Thc;
@@ -85,20 +61,65 @@ namespace GrowSeeds.ViewModels
         #endregion
 
         #region Properties
-        public string Name
+        public DateTime PlantDate
         {
-            get { return name; }
-            set { SetProperty(ref name, value); }
+            get { return plantDate; }
+            set { SetProperty(ref plantDate, value); }
+        }
+
+        public List<Stage> ListStages
+        {
+            get;
+            set;
+        }
+
+        public Stage StageSelected
+        {
+            get { return stageSelected; }
+            set { SetProperty(ref stageSelected, value);
+                  PlantStage = stageSelected.Item; }
+        }
+
+        public string PlantStage
+        {
+            get { return plantStage; }
+            set { SetProperty(ref plantStage, value); }
+        }
+
+        public List<Medium> ListMediums
+        {
+            get;
+            set;
+        }
+        public Medium MediumSelected
+        {
+            get { return mediumSelected; }
+            set
+            {
+                SetProperty(ref mediumSelected, value);
+                PlantMedium = mediumSelected.Item;
+            }
+        }
+
+        public string PlantMedium
+        {
+            get { return plantMedium; }
+            set { SetProperty(ref plantMedium, value); }
+        }
+        public string PlantStrain
+        {
+            get { return plantStrain; }
+            set { SetProperty(ref plantStrain, value); }
         }
         public long Rating
         {
             get { return rating; }
             set { SetProperty(ref rating, value); }
         }
-        public TypeEnum Type
+        public TypeEnum PlantType
         {
-            get { return type; }
-            set { SetProperty(ref type, value); }
+            get { return plantType; }
+            set { SetProperty(ref plantType, value); }
         }
         public string Effects
         {
@@ -125,39 +146,16 @@ namespace GrowSeeds.ViewModels
             get { return isVisible; }
             set { SetProperty(ref isVisible, value); }
         }
-        public IList<StageInfo> Stages
-        {
-            get;
-            set;
-        }
         public string PlantName
         {
             get { return plantName; }
             set { SetProperty(ref plantName, value); }
-        }
-
-        public object StageSelected
-        {
-            get { return stageSelected; }
-            set { SetProperty(ref stageSelected, value); }
-        }
-        public object MediumSelected
-        {
-            get { return mediumSelected; }
-            set { SetProperty(ref mediumSelected, value); }
-        }
-        public object DateSelected
-        {
-            get { return dateSelected; }
-            set { SetProperty(ref dateSelected, value); }
         }
         public string EmptyFields
         {
             get { return emptyfields; }
             set { SetProperty(ref emptyfields, value); }
         }
-
-        public Plant Plant { get; set; }
         #endregion
 
         #region Command
@@ -195,18 +193,27 @@ namespace GrowSeeds.ViewModels
 
         private void Save()
         {
-            if (string.IsNullOrEmpty(PlantName) || (StageSelected==null) || (MediumSelected==null) )
+            if (string.IsNullOrEmpty(PlantName) || string.IsNullOrEmpty(PlantStage) || string.IsNullOrEmpty(PlantMedium))
             {
                 EmptyFields = "Red";
             }
             else
             {
-                MessagingCenter.Send("AddItem", "argu");
+
+                Application.Current.MainPage.DisplayAlert(
+                    "Datos",$"DATA " +
+                    $"// {PlantName} " +
+                    $"// {PlantStage} " +
+                    $"// {PlantMedium} " +
+                    $"// {PlantDate.ToString("d")} "+
+                    $"// {PlantStrain} " +
+                    $"// {PlantType} ", "OK");
                 Shell.Current.GoToAsync("//PlantsTab");
                 PlantName = string.Empty;
-                StageSelected = null;
-                MediumSelected = null;
-                DateSelected = System.DateTime.Now;
+                //ListStages = string.Empty;
+                //ListMediums.Clear();
+                ListStages = null;
+                PlantDate = System.DateTime.Now;
                 IsVisible = false;
                 EmptyFields = "Transparent";
             }
