@@ -33,6 +33,7 @@ namespace GrowSeeds.ViewModels
         #region Contructor
         public StrainDetailViewModel()
         {
+            
             IsVisible = false;
             PlantDate = System.DateTime.Now;
             EmptyFields = "Transparent";
@@ -180,7 +181,7 @@ namespace GrowSeeds.ViewModels
         }
         private void Create()
         {
-            this.IsVisible = true;
+            IsVisible = true;
         }
 
         public ICommand SaveCommand
@@ -191,7 +192,7 @@ namespace GrowSeeds.ViewModels
             }
         }
 
-        private void Save()
+        private async void Save()
         {
             if (string.IsNullOrEmpty(PlantName) || string.IsNullOrEmpty(PlantStage) || string.IsNullOrEmpty(PlantMedium))
             {
@@ -200,19 +201,29 @@ namespace GrowSeeds.ViewModels
             else
             {
 
-                Application.Current.MainPage.DisplayAlert(
-                    "Datos",$"DATA " +
-                    $"// {PlantName} " +
-                    $"// {PlantStage} " +
-                    $"// {PlantMedium} " +
-                    $"// {PlantDate.ToString("d")} "+
-                    $"// {PlantStrain} " +
-                    $"// {PlantType} ", "OK");
-                Shell.Current.GoToAsync("//PlantsTab");
+                //    Application.Current.MainPage.DisplayAlert(
+                //        "Datos",$"DATA " +
+                //        $"// {PlantName} " +
+                //        $"// {PlantStage} " +
+                //        $"// {PlantMedium} " +
+                //        $"// {PlantDate.ToString("d")} "+
+                //        $"// {PlantStrain} " +
+                //        $"// {PlantType} ", "OK");
+                
+
+                await App.Database.SaveItemAsync(new Plant
+                {
+                    PlantName = PlantName,
+                    PlantStage = PlantStage,
+                    PlantMedium = PlantMedium,
+                    PlantDate = PlantDate.ToString("d"),
+                    PlantStrain = PlantStrain,
+                    PlantType = PlantType.ToString()
+                });
+
+
+                await Shell.Current.GoToAsync("//PlantsTab");
                 PlantName = string.Empty;
-                //ListStages = string.Empty;
-                //ListMediums.Clear();
-                ListStages = null;
                 PlantDate = System.DateTime.Now;
                 IsVisible = false;
                 EmptyFields = "Transparent";

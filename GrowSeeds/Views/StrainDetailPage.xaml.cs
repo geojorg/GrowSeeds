@@ -20,7 +20,7 @@ namespace GrowSeeds.Views
         }
         async void FadeOut_Clicked(object sender, System.EventArgs e)
         {
-            await SeedButton.FadeTo(1, 2000, Easing.SinInOut);   
+            await SeedButton.FadeTo(1, 2000, Easing.SinInOut);
         }
     }
 }

@@ -6,6 +6,7 @@ namespace GrowSeeds.Controls
 {
     public class StagePicker
     {
+
         public static List<Stage> GetStages()
         {
             var Stages = new List<Stage>()
