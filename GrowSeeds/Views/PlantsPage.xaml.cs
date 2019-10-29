@@ -1,4 +1,5 @@
 ﻿using GrowSeeds.ViewModels;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,8 +11,12 @@ namespace GrowSeeds.Views
         public PlantsPage()
         {
             InitializeComponent();
-            
             BindingContext = new PlantsViewModel();
+        }
+
+        protected override async void OnAppearing()
+        {
+            listplants.ItemsSource = await App.Database.GetPlantAsync();
         }
     }
 }

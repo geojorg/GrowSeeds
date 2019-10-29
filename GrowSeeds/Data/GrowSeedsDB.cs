@@ -1,5 +1,6 @@
 ﻿using GrowSeeds.Models;
 using SQLite;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GrowSeeds.Data
@@ -14,7 +15,7 @@ namespace GrowSeeds.Data
             database.CreateTableAsync<Plant>().Wait();
         }
 
-        public Task<int> SaveItemAsync(Plant item)
+        public Task<int> SavePlantAsync(Plant item)
         {
             if (item.Id != 0)
             {
@@ -26,9 +27,14 @@ namespace GrowSeeds.Data
             }
         }
 
-        public Task<int> DeleteItemAsync(Plant item)
+        public Task<int> DeletePlantAsync(Plant item)
         {
             return database.DeleteAsync(item);
+        }
+
+        public Task<List<Plant>> GetPlantAsync()
+        {
+            return database.Table<Plant>().ToListAsync();
         }
     }
 }

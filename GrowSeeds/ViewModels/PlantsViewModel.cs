@@ -1,7 +1,6 @@
-﻿using GrowSeeds.Models;
-using GrowSeeds.Services;
-using GrowSeeds.Views;
-using System.Collections.ObjectModel;
+﻿using GalaSoft.MvvmLight.Command;
+using GrowSeeds.Models;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace GrowSeeds.ViewModels
@@ -9,6 +8,7 @@ namespace GrowSeeds.ViewModels
     public class PlantsViewModel : BaseViewModel
     {
 
+    
     }
 }
     

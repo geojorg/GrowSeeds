@@ -200,18 +200,7 @@ namespace GrowSeeds.ViewModels
             }
             else
             {
-
-                //    Application.Current.MainPage.DisplayAlert(
-                //        "Datos",$"DATA " +
-                //        $"// {PlantName} " +
-                //        $"// {PlantStage} " +
-                //        $"// {PlantMedium} " +
-                //        $"// {PlantDate.ToString("d")} "+
-                //        $"// {PlantStrain} " +
-                //        $"// {PlantType} ", "OK");
-                
-
-                await App.Database.SaveItemAsync(new Plant
+                await App.Database.SavePlantAsync(new Plant
                 {
                     PlantName = PlantName,
                     PlantStage = PlantStage,
@@ -221,9 +210,9 @@ namespace GrowSeeds.ViewModels
                     PlantType = PlantType.ToString()
                 });
 
-
                 await Shell.Current.GoToAsync("//PlantsTab");
                 PlantName = string.Empty;
+                PlantStage = emptyfields;
                 PlantDate = System.DateTime.Now;
                 IsVisible = false;
                 EmptyFields = "Transparent";

@@ -13,11 +13,34 @@
              Shell.BackgroundColor="#3c725b">
     
     <ContentPage.Content>
-        <StackLayout x:DataType="viewModels:PlantsViewModel">
-            <ListView>
+        <StackLayout
+            BackgroundColor="LightGray">
+            <ListView x:Name="listplants"
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None"
+                      SelectedItem="{Binding SelectedPlant}"
+                  >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        
+                        <ViewCell>
+                            <Frame
+                                x:Name="Item"
+                                HasShadow="True"
+                                Margin="5">
+                                <StackLayout
+                                Orientation="Vertical">
+                                    <Label
+                                Text="{Binding PlantName}"/>
+                                    <Label
+                                Text="{Binding PlantStrain}"/>
+                                    <Label
+                                Text="{Binding PlantType}"/>
+                                    <Label
+                                Text="{Binding PlantDate}"/>
+                                   
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

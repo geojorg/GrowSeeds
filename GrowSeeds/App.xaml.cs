@@ -22,6 +22,7 @@ namespace GrowSeeds
                 Settings.GeneralSettings = value;
             }
         }
+
         public App()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace GrowSeeds
                 Shell.Current.GoToAsync("//Login");
             }
         }
+
         public static GrowSeedsDB Database
         {
             get
