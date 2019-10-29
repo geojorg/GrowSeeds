@@ -12,5 +12,6 @@ namespace GrowSeeds.Models
         public string PlantDate { get; set; }
         public string PlantStrain { get; set; }
         public string PlantType { get; set; }
+        public int Days { get; set; }
     }
 }

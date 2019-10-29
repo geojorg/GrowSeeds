@@ -207,7 +207,8 @@ namespace GrowSeeds.ViewModels
                     PlantMedium = PlantMedium,
                     PlantDate = PlantDate.ToString("d"),
                     PlantStrain = PlantStrain,
-                    PlantType = PlantType.ToString()
+                    PlantType = PlantType.ToString(),
+                    Days = (DateTime.Today - PlantDate).Days
                 });
 
                 await Shell.Current.GoToAsync("//PlantsTab");
