@@ -54,11 +54,13 @@
                                             FontSize="20"
                                             FontFamily="{StaticResource UbuntuBold}"
                                             HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
                                             Text="{Binding PlantName}">
                                         </Label>
                                         <Label
                                             FontSize="17"
                                             HorizontalOptions="CenterAndExpand"
+                                            HorizontalTextAlignment="Center"
                                             Text="{Binding PlantStrain}">
                                         </Label>
                                         <Label
@@ -78,8 +80,8 @@
                                         <Label
                                             HorizontalOptions="Center"
                                             FontFamily="{StaticResource UbuntuBold}"
-                                            FontSize="40"
-                                            Text="{Binding Days}">
+                                            FontSize="12"
+                                            Text="{Binding PlantDate}">
                                         </Label>
                                         <Label
                                             HorizontalOptions="Center"

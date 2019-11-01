@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using System;
 
 namespace GrowSeeds.Models
 {
@@ -9,9 +10,8 @@ namespace GrowSeeds.Models
         public string PlantName { get; set; }
         public string PlantStage { get; set; }
         public string PlantMedium { get; set; }
-        public string PlantDate { get; set; }
+        public DateTime PlantDate { get; set; }
         public string PlantStrain { get; set; }
         public string PlantType { get; set; }
-        public int Days { get; set; }
     }
 }

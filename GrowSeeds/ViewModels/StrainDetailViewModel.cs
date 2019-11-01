@@ -27,6 +27,7 @@ namespace GrowSeeds.ViewModels
         private string plantMedium;
         private string emptyfields;
         private DateTime plantDate;
+   
 
         #endregion
 
@@ -205,10 +206,9 @@ namespace GrowSeeds.ViewModels
                     PlantName = PlantName,
                     PlantStage = PlantStage,
                     PlantMedium = PlantMedium,
-                    PlantDate = PlantDate.ToString("d"),
+                    PlantDate = PlantDate,
                     PlantStrain = PlantStrain,
                     PlantType = PlantType.ToString(),
-                    Days = (DateTime.Today - PlantDate).Days
                 });
 
                 await Shell.Current.GoToAsync("//PlantsTab");

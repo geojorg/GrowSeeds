@@ -1,23 +1,24 @@
 ﻿using GrowSeeds.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace GrowSeeds.ViewModels
 {
     public class PlantsViewModel : BaseViewModel
     {
 
-        //public Task<List<Plant>> Mode { get; }
+        public PlantsViewModel()
+        {
+            string Days = (DateTime.Today - PlantDate).Days.ToString();
+            Application.Current.MainPage.DisplayAlert("TEST", Days, "ok");
+        }
 
-        //public PlantsViewModel()
-        //{
-        //    var t = new List<Plant>();
-        //    Mode = App.Database.GetPlantAsync();
-            
-           
-        //}
-
-        
+        public DateTime PlantDate 
+        { 
+            get;  
+        }
     }
 }
     
